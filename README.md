@@ -1,4 +1,4 @@
-######Proyecto-Integrador
+###### Proyecto-Integrador
 • Integrantes: o Pablo Angelone o Tomas Peldslatier o Miguel Silva
 
 • Acceso al repositorio Git Hub https://github.com/Miguel-Andres/grupo_8_proyecto.git
