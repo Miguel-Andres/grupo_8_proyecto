@@ -21,4 +21,9 @@ router.get('/register', function(req, res, next) {
   res.render('register', { title: 'registro' });
 });
 
+/* GET productDtaile page. */
+router.get('/ProductDetail', function(req, res, next) {
+  res.render("productdetail", { title: 'menu' });
+});
+
 module.exports = router;
