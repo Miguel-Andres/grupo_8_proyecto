@@ -2,8 +2,18 @@
 *{
     
 }
+
+header{
+    background-color: rgb(157, 23, 37);
+}
+
+.nav-link{
+    font-family: 'Oxygen', sans-serif;
+    color: white;
+
+}
 body{
-    background-image: url("https://i.ibb.co/8dYPRpR/fondoP.jpg") ;
+    background-color: white;
     
     background-size: cover;
 }
@@ -40,17 +50,11 @@ h1{
 .container-abajo{
     display: flex;
     justify-content: space-between;
+    margin-left: 250px;
 }
 
 
-/*section*/
-.banner{    
-        background-image: url("../img/bannerpizza.webp") ;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        height: 100px;
-      }
+
       .ap{
           background-image: url("../img/download.png");
                display: flex;
@@ -60,7 +64,7 @@ h1{
     }
 
       .rt{
-          background-color: royalblue;
+          background-color: rgb(230, 225, 225);
           padding: 10px;
           margin: 10px;
           
@@ -78,6 +82,7 @@ h1{
       .ubicacion {
         display: flex;
         justify-content: center;
+        margin: 20px;
     }
     /*body productos*/
     .productos {
@@ -107,7 +112,7 @@ h1{
         }
     /*formulario*/
     .prueba{
-        background-color:grey;
+        background-color:rgb(230, 225, 225);
         margin: 15px;
     }
 
@@ -122,6 +127,10 @@ h1{
         
 
     
+    }
+    /*productos "pizzas clasicas"*/
+    .hol{
+        color: white;
     }
     /*.item{
         border: dashed black 2px;
@@ -143,8 +152,8 @@ h1{
     }*/
 /*pie de pagina*/
 footer {
-    border-top:4px red solid ;    
-    border-bottom:4px red solid ;
+    border-top:4px   rgb(157, 23, 37) solid ;    
+    border-bottom:4px  rgb(157, 23, 37) solid ;
      ;
     display: flex;
     justify-content: center;
@@ -155,15 +164,18 @@ footer {
 ul {
     list-style-type: none;
     font-family: "anton";
-    color:green;
+    color:  rgb(157, 23, 37);
 }
 
 
 ul li{ 
      list-style-type: none;
      font-family: 'Abel', sans-serif;
-     color:white
+     color:  rgb(157, 23, 37);
     
+}
+.card-body{
+    background-color: rgb(230, 225, 225);
 }
 .redes-sociales{
     

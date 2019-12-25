@@ -2,198 +2,36 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <!--Fonts Famili-->
-  <link href="https://fonts.googleapis.com/css?family=Kalam|Abel|Anton&display=swap" rel="stylesheet">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barukpizza</title>
-  <link rel="icon" type=".ico" href="./img/logo title.ico">
-  <!-- Font Awesome Stylesheet -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--My styleshet-->
-  <link rel="stylesheet" href="./css/style.css">
+ <%- include("partials/head") %>
 
 </head>
 
 <body >
-  <div class="container">
+  <div class="container-fluid">
 
     
     <header>
-      <div class="container  col-12 col-sm-12 ">
-
-        <div class="logo row ">
-
-        <div class="logo crow">
-          <img src="./img/logo baruk.jpg" width="100px" alt="logo"   >
-        </div>
-
-        <div class="boton-usuario col">
-          <div class="dropdown">
-            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user"></i>
-            </button>
-            <div class="dropdown-menu">
-              <form class="px-4 py-3">
-                <div class="form-group">
-                  <label for="exampleDropdownFormEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                    placeholder="email@example.com">
-                </div>
-                <div class="form-group">
-                  <label for="exampleDropdownFormPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                    <label class="form-check-label" for="dropdownCheck">
-                      Remember me
-                    </label>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
-              </form>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">New around here? Sign up</a>
-              <a class="dropdown-item" href="#">Forgot password?</a>
-            </div>
-          </div>
-
-          
-
-
-        </div>
-
-        <div class="carro row ">
-          <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-shopping-cart"></i></button> 
-          </div>
-      </div>
-
-      
-        
-                
-
-        <div class="container-abajo">
-
-
-          <div class="botones">
-
-            <ul class="nav nav-tabs ">
-              
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active btn-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                  aria-expanded="false">Menu</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">clasicas</a>
-                  <a class="dropdown-item" href="#">Especiales</a>                  
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Ofertas</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link " href="#">Crea tu pizza </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">EVENTOS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">locales</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ofertas Del dia</a>
-              </li>
-            </ul>
-          </div>
-          <div class="buscador">
-            <form action="" method="get" class="search-form">
-              <input type="text" name="search" placeholder="Buscar productos" class="search-form_input">
-              <button type="submit" class="search-form_button"><i class="fas fa-search" style="color: red;" ></i></button>
-            </form>
-          </div>
-
-
-        </div>
-
-      </div>
+      <%- include("partials/header") %>
     </header>
     <!--Inicio secction-->
     <section>
       <div class="principal">
 
-        <!--Banner-->
-          <div class="banner"></div>
-          <!--Banner-->
-      
-        
+
+          <%- include("partials/carrusel") %>
           <div class="ubicacion">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9291.158599679857!2d-58.42890714038579!3d-34.58087492063201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb59c771eb933%3A0x6b3113b596d78c69!2sPalermo%2C%20CABA!5e0!3m2!1ses!2sar!4v1575665860046!5m2!1ses!2sar"
-              width="800" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-          </div>
-
-        
-
+              width="500" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>          
 
       </div>
     </section>
 
 
     <!--footer-->
-    <footer >
-
-
-      <div class=" row col-12 ">
-
-        <ul>Menu
-          <li><a>crea tu Pizaa</a></li>
-        </ul>
-        <ul>Eventos
-          <li><a>Proximos</a></li>
-        </ul>
-        <ul>Sobre Nosotros
-          <li><a></a></li>
-        </ul>
-        <ul>Locales
-          <li><a>Nuestros Locales</a></li>
-        </ul>
-        <ul>Las Mejores Ofertas
-          <li><a>Pizza box</a></li>
-          <li><a>2x1 jueves</a></li>
-          <li><a>Crea Tu pizza 50% OFF</a>
-          </li>
-        </ul>
-
-
-        <ul>Mi cuenta
-          <li><a>Registrase</a></li>
-          <li><a>crear tu cuenta</a></li>
-          <li><a>Mi cuenta</a></li>
-        </ul>
-
-
-
-        <ul>Politicas
-          <li><a>Politicas de privasidad</a></li>
-          <li><a>Terminos de Uso</a></li>
-
-
-        </ul>
-
-      <div class="redes-sociales col">
-        <a href=""><i class="fab fa-instagram"></i></a>
-        <a href=""><i class="fab fa-whatsapp"style="color: green;""></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-square" style="color: red;"></i></a>
-      </div>
-
-
-
-      </div>
+    <footer>
+      <%- include("partials/footer")%>
     </footer>
 
   </div>
