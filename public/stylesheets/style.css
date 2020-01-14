@@ -154,7 +154,7 @@ h1{
 footer {
     border-top:4px   rgb(157, 23, 37) solid ;    
     border-bottom:4px  rgb(157, 23, 37) solid ;
-     ;
+     
     display: flex;
     justify-content: center;
     list-style-type: none; 
