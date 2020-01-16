@@ -19,14 +19,33 @@ router.get('/carProduct', function(req, res, next) {
   res.render('carProduct', { title: 'litle car' });
 });
 
-/* GET register page. */
-router.get('/register', userController.registro);
-
-
 /* GET productDtaile page. */
 router.get('/ProductDetail', productController.detalle);
 
+<<<<<<< HEAD
 router.post("/productos", function(req, res, next){
   console.log(req.body)
 })
+=======
+
+
+
+/*====================================================================*/
+/* GET register page. */
+router.get('/register', userController.registro);
+
+/*POST register page*/
+
+router.post("/register", userController.ingreso)
+
+
+
+
+
+
+
+>>>>>>> bda50430e36117d36e8d2cf9a8b737c64bd77b40
 module.exports = router;
+
+
+
