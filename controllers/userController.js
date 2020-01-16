@@ -1,3 +1,11 @@
-const controller ={}
+const userController ={
 
-module.exports=controller
+    registro :function(req, res, next) {
+        res.render('register', { title: 'registro' })},
+
+    login: function(){},
+
+
+}
+
+module.exports=userController
