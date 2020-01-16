@@ -13,7 +13,7 @@ const userController ={
     
     },
 
-        ingreso: function(req,res,next){
+        ingresoDatos: function(req,res,next){
             console.log(req.body)
             let usuario = req.body
             let dataUsuarios = fs.readFileSync(usuariosDatabase,{encoding:"utf-8"})
@@ -26,7 +26,8 @@ const userController ={
             res.send("hola te has registrado") 
         } ,
 
-    login: function(){},
+    login: function(req,res,next){
+        res.send("hola ingresaste a tu usuario")},
 
 
 }
