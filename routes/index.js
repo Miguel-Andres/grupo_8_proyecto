@@ -9,11 +9,20 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+
+/*====================================================================*/
+
 /* GET add product page. */
 router.get('/addProduct', function(req, res, next) {
   res.render('addProduct', { title: 'product' });
 });
 
+/* Post add product page. */
+router.post("/productos", function(req, res, next){
+  console.log(req.body)
+})
+
+/*====================================================================*/
 /* GET add car page. */
 router.get('/carProduct', function(req, res, next) {
   res.render('carProduct', { title: 'litle car' });
@@ -22,11 +31,7 @@ router.get('/carProduct', function(req, res, next) {
 /* GET productDtaile page. */
 router.get('/ProductDetail', productController.detalle);
 
-<<<<<<< HEAD
-router.post("/productos", function(req, res, next){
-  console.log(req.body)
-})
-=======
+
 
 
 
@@ -44,7 +49,6 @@ router.post("/register", userController.ingreso)
 
 
 
->>>>>>> bda50430e36117d36e8d2cf9a8b737c64bd77b40
 module.exports = router;
 
 
