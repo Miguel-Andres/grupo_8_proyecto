@@ -4,61 +4,51 @@
       <%- include("partials/head") %>
     
     </head>
-  <div class="container">
-    
-      <header>
+    <body>
+      <header class="container-fluid  col-12 col-sm-0">
         <%- include("partials/header") %>
       </header>
-    <!--Inicio secction-->
-    <section class="prueba">
-      <div class="container">
-            <form class="formulario container-fluid">
+    
+  
+    
+      
+    <!--Inicio formulario-->
+    <section class="prueba container center-block ">
+
+      <div class=" center-block">
+
+            <form class=" container-fluid" method="POST">
                     <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
+                        <label >Email</label>
+                        <input type="email" class="form-control" value ="email" >
                       </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputPassword4">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword4">
+                      <div class="form-group col-md-3">
+                        <label >Contraseña</label>
+                        <input type="password" class="form-control" value="password" >
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label >Repetir Contraseña</label>
+                        <input type="password" class="form-control" value="password" >
                       </div>
                     </div>
-                    <form class="formulario container-fluid">
+                    
                             <div class="form-row">
                               <div class="form-group col-md-6">
-                                <label for="inputEmail4">Nombre</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <label >Nombre</label>
+                                <input type="text" class="form-control" >
                               </div>
                               <div class="form-group col-md-6">
-                                <label for="inputPassword4">Apellido</label>
-                                <input type="password" class="form-control" id="inputPassword4">
+                                <label >Apellido</label>
+                                <input type="text" class="form-control" >
                               </div>
                             </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Dirección</label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="Palermo,gorriti1234">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity">Telefono</label>
-                        <input type="text" class="form-control" id="inputCity">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState">Ciudad</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <label for="inputZip">Codigo Postal</label>
-                        <input type="text" class="form-control" id="inputZip">
-                      </div>
-                    </div>
+                    
+                    
                     <button type="submit" class="btn btn-primary">Registrarse</button>
                   </form>
                   </div>
-      </div>
+      
     </section>
 
     
@@ -66,7 +56,8 @@
     <footer>
       <%- include("partials/footer") %> 
     </footer>
-  </div>
+  
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
