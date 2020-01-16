@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var productController = require("../controllers/productController");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -22,8 +23,6 @@ router.get('/register', function(req, res, next) {
 });
 
 /* GET productDtaile page. */
-router.get('/ProductDetail', function(req, res, next) {
-  res.render("productdetail", { title: 'menu' });
-});
+router.get('/ProductDetail', productController.detalle);
 
 module.exports = router;
