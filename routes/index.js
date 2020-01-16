@@ -18,13 +18,29 @@ router.get('/carProduct', function(req, res, next) {
   res.render('carProduct', { title: 'litle car' });
 });
 
-/* GET register page. */
-router.get('/register', userController.registro);
-
-
 /* GET productDtaile page. */
 router.get('/ProductDetail', function(req, res, next) {
   res.render("productdetail", { title: 'menu' });
 });
 
+
+
+
+/*====================================================================*/
+/* GET register page. */
+router.get('/register', userController.registro);
+
+/*POST register page*/
+
+router.post("/register", userController.ingreso)
+
+
+
+
+
+
+
 module.exports = router;
+
+
+
