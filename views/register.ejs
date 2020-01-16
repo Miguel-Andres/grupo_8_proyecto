@@ -4,32 +4,35 @@
       <%- include("partials/head") %>
     
     </head>
-  <div class="container">
-    
-      <header class="container  col-12 col-sm-0">
+    <body>
+      <header class="container-fluid  col-12 col-sm-0">
         <%- include("partials/header") %>
       </header>
-    <!--Inicio secction-->
-    <section class="prueba">
+    
+  
+    
+      
+    <!--Inicio formulario-->
+    <section class="prueba container center-block ">
 
-      <div class="container">
+      <div class=" center-block">
 
-            <form class="formulario container-fluid">
+            <form class=" container-fluid" method="POST">
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label >Email</label>
-                        <input type="email" class="form-control" >
+                        <input type="email" class="form-control" value ="email" >
                       </div>
                       <div class="form-group col-md-3">
                         <label >Contraseña</label>
-                        <input type="password" class="form-control" >
+                        <input type="password" class="form-control" value="password" >
                       </div>
                       <div class="form-group col-md-3">
                         <label >Repetir Contraseña</label>
-                        <input type="password" class="form-control" >
+                        <input type="password" class="form-control" value="password" >
                       </div>
                     </div>
-                    <form class="formulario container-fluid">
+                    
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label >Nombre</label>
@@ -45,7 +48,7 @@
                     <button type="submit" class="btn btn-primary">Registrarse</button>
                   </form>
                   </div>
-      </div>
+      
     </section>
 
     
@@ -53,7 +56,8 @@
     <footer>
       <%- include("partials/footer") %> 
     </footer>
-  </div>
+  
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
