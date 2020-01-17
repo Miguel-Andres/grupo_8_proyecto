@@ -13,46 +13,50 @@
 <section class="  container ap ">
 
     <div class="container row wrap rt col-6">
-          <form class="formulario container-fluid">
+          <form class="formulario container-fluid" action="/addproduct" method="POST">
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label >Categoria  </label>
                      
 
-                      <input type="text"  class="form-control" >
+                      <input type="text" name="nombre" class="form-control" >
                     </div>
                     <div class="form-group col-md-6">
                       <label >Nombre</label>
-                      <input type="text" class="form-control" >
+                      <input type="text" name="" class="form-control" >
                     </div>
                   </div>
-                  <form class="formulario container-fluid">
-                          <div class="form-row">
-                            <div class="form-group col-md-6">
-                              <label>precio</label>
-                              <input type="email" class="form-control" >
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Tamaños :</label><br>
-                              <input type="checkbox"  val="pequeña">
-                              <label class="form-check-label" >Pequeña</label> <br>
-                              <input type="checkbox" val="Mediana" >
-                              <label class="form-check-label" >Mediana</label>
-                              <input type="checkbox" val="Grandre" >
-                              <label class="form-check-label" >grande</label>
-                            </div>
-                          </div>
+                  
+                  <div  class="form-row ">
+                    <div class="form-group col-md-3">
+                      <label >Pequeña</label>
+                      <input type="text" name="pequeña" class="form-control" >
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label >Mediana</label>
+                      <input type="text" name="mediana" class="form-control" >
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label >Grande</label>
+                      <input type="text" name="grande" class="form-control" >
+                    </div>
+
+
+
+                  </div>
+                  
+                          
                   <div class="form-group">
                     <label for="inputAddress">Detalles</label>
-                    <input type="text" class="form-control"  placeholder="Rica pizza de ....">
+                    <input type="text" class="form-control" name="detalles" placeholder="Rica pizza de ....">
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputCity">Producto</label>
-                      <input type="text" class="form-control" id="inputCity">
+                      <input type="text" class="form-control"  name="producto" id="inputCity">
                     </div>
                     <div class="form-group col-md-4">
-                      <label ">Otro</label>
+                      <label >Otro</label>
                       <select  class="form-control">
                         <option selected>otro</option>
                         <option>...</option>
@@ -60,7 +64,7 @@
                     </div>
                     <div class="form-group col-md-2">
                       <label >IdProducto</label>
-                      <input type="text" class="form-control" >
+                      <input type="text" name="idproducto" class="form-control" >
                     </div>
                   </div>
                   <button type="submit" class="btn btn-danger">Cargar Datos</button>
@@ -71,7 +75,7 @@
               <form>
                   <div class="form-group">
                     <label >Entrada Del archivo</label>
-                    <input type="file" class="form-control-file" >
+                    <input type="file" name="archivo" class="form-control-file" >
                   </div>
                 </form>
               </div>
