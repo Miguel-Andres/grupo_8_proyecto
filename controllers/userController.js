@@ -11,9 +11,9 @@ const userController ={
         console.log(req.body)
 
     
-    },
+     },
 
-        ingresoDatos: function(req,res,next){
+    ingresoDatos: function(req,res,next){
             console.log(req.body)
             let usuario = req.body
             let dataUsuarios = fs.readFileSync(usuariosDatabase,{encoding:"utf-8"})
@@ -27,7 +27,9 @@ const userController ={
         } ,
 
     login: function(req,res,next){
-        res.send("hola ingresaste a tu usuario")},
+
+        console.log(req.body)
+        res.send("HOLA has ingresado a tu usuario ")},
 
 
 }

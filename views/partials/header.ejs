@@ -7,13 +7,18 @@
     </div>
 
     <div class="boton-usuario col">
+    
       <div class="dropdown">
         <button class="btn btn-danger dropdown-toggle" type="button" 
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user"></i>
         </button>
         <div class="dropdown-menu">
-          <form class="px-4 py-3">
+
+          
+          <!-- FORMULARIO EJS --> 
+          
+          <form class="px-4 py-3" method="POST" action ="/">
             <div class="form-group">
               <label >Email address</label>
               <input type="email" class="form-control" 
@@ -33,15 +38,17 @@
             </div>
             <button type="submit" class="btn btn-primary">Sign in</button>
           </form>
+
+          <!-- /* FORMULARIO EJS */ --> 
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">New around here? Sign up</a>
           <a class="dropdown-item" href="#">Forgot password?</a>
         </div>
       </div>
-
+  
       
-
-
+  
+  
     </div>
 
     <div class="carro row ">
