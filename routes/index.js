@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var productController = require("../controllers/productController");
 var userController = require("../controllers/userController.js")
+var productController = require("../controllers/productController.js")
+const path = require('path');
 var {check,validationResult,body} = require("express-validator")
 var fs = require("fs")
 var path =require ("path")
@@ -16,6 +17,11 @@ const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 router.get('/', function(req, res, next) {
   res.render('index');
 });
+
+/*====================================================================*/
+
+/* GET productDtaile page. */
+router.get('/productDetail', productController.detalle);
 
 /* POST HOME LOGGIN */
 router.post("/",userController.login)
@@ -32,15 +38,6 @@ router.post("/addproduct",function(req,res){
 router.get('/carProduct', function(req, res, next) {
   res.render('carProduct', { title: 'litle car' });
 });
-
-/* GET productDtaile page. */
-router.get('/ProductDetail', productController.detalle);
-
-router.post("/productos", function(req, res, next){
-  console.log(req.body)
-})
-
-
 
 /*====================================================================*/
 /* GET register page. */

@@ -41,8 +41,8 @@
 
           <!-- /* FORMULARIO EJS */ --> 
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">New around here? Sign up</a>
-          <a class="dropdown-item" href="#">Forgot password?</a>
+          <a class="dropdown-item" href="/register">New around here? Sign up</a>
+          <a class="dropdown-item" href="/register">Forgot password?</a>
         </div>
       </div>
   
@@ -51,8 +51,10 @@
   
     </div>
 
-    <div class="carro row ">
-      <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-shopping-cart"></i></button> 
+    <div class="carro row " >
+      <a href="/carproduct">
+      <button type="button"  class="btn btn-primary btn-sm" ><i class="fas fa-shopping-cart"></i></button> 
+      </a>
       </div>
   </div>
 
@@ -71,21 +73,19 @@
             <a class="nav-link dropdown-toggle active btn-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">Menu</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">clasicas</a>
-              <a class="dropdown-item" href="#">Especiales</a>                  
+              <a class="dropdown-item" href="/products">clasicas</a>
+              <a class="dropdown-item" href="/products">Especiales</a>                  
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Ofertas</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link " href="#">Crea tu pizza </a>
-          </li>
+          
           <li class="nav-item">
 
             <a class="nav-link" href="#">Eventos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Locales</a>
+            <a class="nav-link" href="/">Locales</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Ofertas Del dia</a>
