@@ -13,12 +13,17 @@
     "express": "~4.16.1",
     "express-validator": "^6.3.1",
     "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
     "morgan": "~1.9.1",
-    "path": "^0.12.7"
+    "mysql2": "^2.1.0",
+    "path": "^0.12.7",
+    "sequelize": "^5.21.3"
   },
   "description": "Proyecto integrador",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "sequelize-cli": "^5.5.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Miguel-Andres/grupo_8_proyecto.git"
