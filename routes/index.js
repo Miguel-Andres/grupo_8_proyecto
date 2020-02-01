@@ -5,7 +5,7 @@ var productController = require("../controllers/productController.js")
 const path = require('path');
 var {check,validationResult,body} = require("express-validator")
 var fs = require("fs")
-var path =require ("path")
+
 
 const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 

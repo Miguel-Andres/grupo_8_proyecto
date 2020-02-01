@@ -1,8 +1,1 @@
-<<<<<<< HEAD
-[{"name":"ale","lastName":"test","email":"a@gmail.com","password":"$2b$04$BrBF32K1pgByXleOeev3be4WaAS4NnZjCNxRNUUaRwk/9j3HrXFiu","confirmpassword":"asdasdasd"},{"name":"b","lastName":"test","email":"b@gmail.com","password":"$2b$04$/oCCu052OTADwaaHgOlTaeyO.ieJkTYtGWM61EMQY/FF/rK2VIU6K","confirmpassword":"asdasdasd"},{"name":"c","lastName":"test","email":"c@gmail.com","password":"$2b$04$6s34tgffFTJUxawZH51zoeIkP5gbQirDyagIiQtOzj70kPLltgzKy","confirmpassword":"asdasdasd"},{"name":"miguel","lastName":"andres","email":"hola@hola.com","password":"$2b$04$rV2JDXWUUKb55R4vUouj7OBJzR1JJJ9Zls2fOz0SwLciq6OSr6nS2","confirmpassword":"12345"},{"name":"tomas","lastName":"tomas","email":"tomas1@hola.com","password":"$2b$04$tT/cfgis2sWCkcR3UBQAvOjeoGUR0wAVlu3C.do5gq2lHptD4HXXO","confirmpassword":"343434"}]
-=======
-<<<<<<< HEAD
-=======
-[{"name":"monito","lastName":"monito","email":"PRUEBA1@HOLA.COM","password":"$2b$04$in8ApVC4NVA24kDb6loJ0.KF9pcZguAarxxeMi9/qqQ2dNiq1mwPa","confirmpassword":"monitos"},{"name":"miguel","lastName":"bonito","email":"prueba2@hola.com","password":"$2b$04$ZRXkCx4yV7y5rzC1Ve/IY.QzXKsmP/n7SMPpGekr6LGUn0SoRE9IS","confirmpassword":"23487961"}]
->>>>>>> 08af8a4e08e03a6f29c603e448deaafb280329d6
->>>>>>> 456244d0452c8ce4cb03e1401050e14441f1b76e
+[{"name":"Miguel","lastName":"Silva Pereira","email":"hola@hola.com","password":"$2b$04$C2cn2IQKmkf6WqqW0k4fPuD1loD52qSHsBbAmWPOWWpSNuUfoiKNS","confirmpassword":"12345"}]

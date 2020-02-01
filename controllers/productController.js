@@ -33,6 +33,7 @@ const productController ={
       
       productJson = JSON.stringify(products);
       fs.writeFileSync("product.json", productJson)
+      console.log(req.body)
       res.send("el producto ha sido cargado")
     } ,
 

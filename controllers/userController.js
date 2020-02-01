@@ -42,12 +42,7 @@ const userController = {
             
             let usuarios = JSON.parse(dataUsuarios)
 
-            /*for ( let i = 0 ; i < usuarios.length ;i++ ){
-                if (req.body.email == usuarios[i].email){
-                    res.render("register" ,{save: true})
-                    return ;
-                }
-            }*/
+          
                     usuarios.push(usuario)
 
                     fs.writeFileSync(usuariosDatabase, JSON.stringify(usuarios))
@@ -76,6 +71,17 @@ const userController = {
         
         return res.send("el usuario no existe")
     },
+
+
+    profile : function (req,res,next){
+        
+
+    }
+
+
+
+
 }
+
 
 module.exports=userController
