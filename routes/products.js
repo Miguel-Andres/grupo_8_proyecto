@@ -5,29 +5,28 @@ var productController = require("../controllers/productController.js")
 
 
 /* GET productDtaile page. */
-router.get('/', productController.detalle);
+router.get('/', productController.productos);
 
 /*====================================================================*/
 
 /* GET add product page. */
 router.get('/create', productController.formulario);
-router.post('/create', productController.cargaProduct);
 
 /* Post add product page. */
+router.post('/create', productController.cargaProduct);
+
+/* GET detail product page. */
+router.get('/detail', productController.detail);
 
 
 
+module.exports = router;
 
 
 /*
-/products (GET)
-Listado de productos
+
 /products/:id (GET)
 Detalle de un producto particular
-/products/create (GET)
-Formulario de creación de productos
-/products (POST)
-Acción de creación (a donde se envía el formulario)
 /products/:id/edit (GET)
 Formulario de edición de productos
 /products/:id (PUT)
@@ -39,5 +38,5 @@ Acción de borrado
 
 
 
-module.exports = router;
+
 
