@@ -24,7 +24,6 @@ module.exports = router;
 
 
 /*
-
 /products/:id (GET)
 Detalle de un producto particular
 /products/:id/edit (GET)
