@@ -4,10 +4,6 @@ var userController = require("../controllers/userController.js")
 const path = require('path');
 var {check,validationResult,body} = require("express-validator")
 var fs = require("fs")
-<<<<<<< HEAD
-
-=======
->>>>>>> 3d1da4af89aaf22037c970b618fc3755260ccc65
 
 const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 
