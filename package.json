@@ -15,10 +15,7 @@
     "http-errors": "~1.6.3",
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
-<<<<<<< HEAD
     "multer": "^1.4.2",
-=======
->>>>>>> 3d1da4af89aaf22037c970b618fc3755260ccc65
     "mysql2": "^2.1.0",
     "path": "^0.12.7",
     "sequelize": "^5.21.3"
