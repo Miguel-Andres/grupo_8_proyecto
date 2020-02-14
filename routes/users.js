@@ -5,6 +5,8 @@ const path = require("path")
 
 const multerAvatar = require ("../middlewares/multerAvatar")
 
+const models = require("../database/models")
+
 
 
 
@@ -18,5 +20,15 @@ router.post("/profile", multerAvatar , (req,res,next) => {
   console.log(req.body.name)
   res.render("userprofile")
 })
+
+// get User List
+router.get("/list" , (req,res,next) => {
+  models.user.findAll()
+  .then(resultado =>{
+    res.json(resultado)
+  }
+    )
+})
+
 
 module.exports = router;
