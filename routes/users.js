@@ -23,7 +23,9 @@ router.post("/profile", multerAvatar , (req,res,next) => {
 
 // get User List
 router.get("/list" , (req,res,next) => {
-  models.user.findAll()
+  models.user.findAll({
+    include:[models.avatar]
+  })
   .then(resultado =>{
     res.json(resultado)
   }
