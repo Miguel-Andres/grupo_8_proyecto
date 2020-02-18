@@ -18,6 +18,16 @@ router.post('/create', productController.cargaProduct);
 /* GET detail product page. */
 router.get('/detail', productController.detail);
 
+/* GET detail product id page. */
+router.get('/detail/:id', productController.detailId);
+
+/* Actualizaicon */
+router.get('/editar/:id', productController.editar);
+router.put('/editar/:id', productController.actualizar);
+
+/* Borrar */
+router.delete('/borrar/:id', productController.borrar);
+
 
 
 module.exports = router;

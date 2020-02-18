@@ -32,9 +32,20 @@ const productController ={
        detail :function(req, res, next) {
          res.render('detalle', { title: 'detalles' })
 
-   }
+   },
+
+   detailId :function(req, res, next) {
+    res.render('detalle', { title: 'detalles' })
    
-   
+  },
+  editar :function(req, res, next) {
+  },
+  actualizar :function(req, res, next) {
+  },
+  borrar :function(req, res, next) {
+  }
+
+
   }
   
   module.exports=productController
