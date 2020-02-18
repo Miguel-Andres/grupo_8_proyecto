@@ -1,6 +1,7 @@
 const fs = require("fs") ;
 const path = require ("path")
 const productDatabase = path.join(__dirname , '../data/product.json')
+const models = require("../database/models")
 
 
 const productController ={
@@ -30,13 +31,24 @@ const productController ={
    },
    
        detail :function(req, res, next) {
-         res.render('detalle', { title: 'detalles' })
+        models.productos.findAll()
+        .then(resultado =>{
+          res.json(resultado)
+        }
+          )
 
    },
 
-   detailId :function(req, res, next) {
-    res.render('detalle', { title: 'detalles' })
-   
+       detailId : function(req, res){
+           models.productos.findByPk(req.params.id)
+            .then(function(productos){
+              res.render("listaDetalleId", {productos:productos})
+            })
+          .catch(err => {
+              res.send("hubo un error,intentalo mas tarde")
+          })
+  
+    
   },
   editar :function(req, res, next) {
   },
