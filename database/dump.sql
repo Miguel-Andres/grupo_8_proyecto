@@ -20,7 +20,10 @@ USE `baruk_db`;
 CREATE TABLE IF NOT EXISTS `avatars` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `cliente_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_avatars_cliente _idx` (`cliente_id`),
+  CONSTRAINT `fk_avatars_cliente ` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
@@ -35,7 +38,8 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `pais` varchar(45) DEFAULT NULL,
   `ciudad` varchar(45) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL,
-  `avatar_id` varchar(45) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
