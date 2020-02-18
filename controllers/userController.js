@@ -69,7 +69,16 @@ const userController = {
     profile : function (req,res,next){
         
 
+    } ,
+
+    edit : (req,res,next)=>{
+
+        res.render("userEdit")
     }
+
+
+
+  
 
 
 
