@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Productos";
+    let alias = "productos";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -48,7 +48,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "productos",
         timestamps: false
     }
-const Productos = sequelize.define (alias, cols, config);
+const productos = sequelize.define (alias, cols, config);
 
-return Productos
+return productos
 }
