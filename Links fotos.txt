@@ -10,7 +10,7 @@ Link Fotos pizzas Banner
 
 
 Link Fotos pizzas Product
-<a href="https://ibb.co/nbzrHBZ"><img src="https://i.ibb.co/mG6JL01/polloba.png" alt="polloba" border="0"></a>
+
 
 <a href="https://ibb.co/3pTRJ8v"><img src="https://i.ibb.co/jy8Jpxz/pollo-y-bbq.jpg" alt="pollo-y-bbq" border="0"></a>
 

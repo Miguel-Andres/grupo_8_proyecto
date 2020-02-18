@@ -4,13 +4,6 @@ const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 const {check ,validationResult, body}= require("express-validator")
 const bcrypt = require("bcrypt")
 
-
-
-
-
-
-
-
 const userController = {
 
     registro :function(req, res, next) {
