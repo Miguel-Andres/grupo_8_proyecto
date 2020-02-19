@@ -32,12 +32,14 @@ const productController ={
    
        detail :function(req, res, next) {
         models.productos.findAll()
-        .then(resultado =>{
-          res.json(resultado)
-        }
-          )
+        .then(function(productos){
+          res.render("listadoDeProductos", {productos:productos})
+        })
 
-   },
+            .catch(err => {
+                res.send("hubo un error,intentalo mas tarde")
+            })
+  },
 
        detailId : function(req, res){
            models.productos.findByPk(req.params.id)
