@@ -39,9 +39,16 @@ const productController ={
 
    },
 
-   detailId :function(req, res, next) {
-    res.render('detalle', { title: 'detalles' })
-   
+       detailId : function(req, res){
+           models.productos.findByPk(req.params.id)
+            .then(function(productos){
+              res.render("listaDetalleId", {productos:productos})
+            })
+          .catch(err => {
+              res.send("hubo un error,intentalo mas tarde")
+          })
+  
+    
   },
   editar :function(req, res, next) {
   },

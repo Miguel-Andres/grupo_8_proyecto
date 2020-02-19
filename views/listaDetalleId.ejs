@@ -21,14 +21,9 @@
     </header>
     <!--Inicio secction-->
 
-    <h1>Listado de productos </h1>
-    <ul>
-        <% for (let i = 0; i < productos.length; i++) { %>
-            <li>
-               <a href="/productos/<%=productos[i].id%>"> <%=productos[i].title%></a>
-            </li>
-        <%}%>
-    </ul>
+    <h1>Producto : <%=productos.nombre%> </h1>
+    <h2>Categoria :<%=productos.categoria%> </h2>
+   <h3>Detalle : <%=productos.detalle%></h3>
  
 
 
