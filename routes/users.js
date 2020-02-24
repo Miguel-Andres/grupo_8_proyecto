@@ -23,8 +23,8 @@ router.get("/profile/edit" ,userController.edit )
 
 
 // get User List
-router.get("/list" ,(req,res,next) => {
-  models.user.findAll({
+router.get("/list" , (req,res,next) => {
+   models.user.findAll({
     include:[models.avatar]
   })
   .then(resultado =>{

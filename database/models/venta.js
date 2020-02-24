@@ -35,10 +35,7 @@ module.exports= (sequelize,dataTypes) => {
 
     let venta = sequelize.define(alias,cols,config)
 
-    venta.associate = function(models){
-
-        venta.hasMany(models.user)
-    }
+  
 
     return venta
 }

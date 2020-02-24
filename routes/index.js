@@ -9,6 +9,8 @@ const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 
 
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -34,7 +36,7 @@ router.get('/register', userController.registro);
 
 let registerValidator = require('../middlewares/validator')
 
-router.post("/register", registerValidator, userController.ingresoDatos)
+router.post("/register", registerValidator, userController.crear)
 
 
 
