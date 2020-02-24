@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `ventas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `producto_id` int(11) DEFAULT NULL,
   `cliente_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

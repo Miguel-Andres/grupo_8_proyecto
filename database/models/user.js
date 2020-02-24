@@ -70,7 +70,10 @@ module.exports = function (sequelize ,dataTypes){
 
     user.associate = function(models){
 
-        user.hasOne(models.avatar,{foreignKey:"cliente_id"})
+        user.hasOne(models.avatar,{
+            
+            foreignKey:"cliente_id"
+        })
     }
 
 

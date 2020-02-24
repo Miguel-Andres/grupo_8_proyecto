@@ -12,14 +12,9 @@ const models = require("../database/models")
 
 
 /* GET && POST users listing. */
-router.get('/profile', function(req, res, next) {
-  res.render('userProfile');
-});
+router.get('/profile',  userController.profile  )
 
-router.post("/profile", multerAvatar , (req,res,next) => {
-  console.log(req.body.name)
-  res.render("userprofile")
-})
+router.post("/profile", multerAvatar , userController.profile )
 
 //user profile edit get and post
 
@@ -28,7 +23,7 @@ router.get("/profile/edit" ,userController.edit )
 
 
 // get User List
-router.get("/list" , (req,res,next) => {
+router.get("/list" ,(req,res,next) => {
   models.user.findAll({
     include:[models.avatar]
   })
@@ -36,7 +31,7 @@ router.get("/list" , (req,res,next) => {
     res.json(resultado)
   }
     )
-})
+} )
 
 
 module.exports = router;

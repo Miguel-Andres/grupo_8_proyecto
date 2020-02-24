@@ -25,10 +25,12 @@ router.get('/carProduct', function(req, res, next) {
 });
 
 /*====================================================================*/
-/* GET register page. */
+/* GET register page y POST */
+
+
 router.get('/register', userController.registro);
 
-/*POST register page*/
+
 
 let registerValidator = require('../middlewares/validator')
 

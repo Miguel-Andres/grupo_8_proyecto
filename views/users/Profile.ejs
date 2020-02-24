@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("partials/head") %>
+    <%- include("../partials/head") %>
 </head>
 <body>
 
@@ -15,8 +15,8 @@
                     <li class="nav-item">
                         <a  data-target="#messages" data-toggle="tab" class="nav-link ">Messages</a>
                     </li>
-                    <li class="nav-item">
-                        <a  data-target="#edit" data-toggle="tab" class="nav-link ">Edit</a>
+                    <li class="nav-item" >
+                        <a href ="/users/profile/edit"   class="nav-link " >Edit</a>
                     </li>
                 </ul>
                 <div class="tab-content py-4">
@@ -26,56 +26,51 @@
                             <div class="col-md-6">
                                 <h6>Nombre</h6>
                                 <p>
-                                   Lorem ipsum dolor sit amet.
-                    
+                                   Lorem ipsum dolor sit amet.                    
                                 </p>
                                 <h6>apellido</h6>
                                 <p>
-                                    
+                                    Lorem, ipsum dolor.                    
                                 </p>
                             </div>
                             <div class="col-md-6">
-                                <h6>Recent badges</h6>
-                                <a href="#" class="badge badge-dark badge-pill">html5</a>
-                                <a href="#" class="badge badge-dark badge-pill">react</a>
-                                <a href="#" class="badge badge-dark badge-pill">codeply</a>
-                                <a href="#" class="badge badge-dark badge-pill">angularjs</a>
-                                <a href="#" class="badge badge-dark badge-pill">css3</a>
-                                <a href="#" class="badge badge-dark badge-pill">jquery</a>
-                                <a href="#" class="badge badge-dark badge-pill">bootstrap</a>
-                                <a href="#" class="badge badge-dark badge-pill">responsive-design</a>
+                                <h6>Direccion </h6>
+                               <p>
+                                   Lorem ipsum dolor sit.
+                               </p>
                                 <hr>
-                                <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
-                                <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
-                                <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
+                                <h6>email</h6>                            
+                                <p>Lorem, ipsum.</p>
                             </div>
                             <div class="col-md-12">
                                 <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span> Compras recientes </h5>
                                 <table class="table table-sm table-hover table-striped">
                                     <tbody>                                    
                                         <tr>
-                                            <td>
-                                                <strong>Abby</strong> joined ACME Project Team in <strong>`Collaboration`</strong>
+                                            <td> 
+                                              <strong>cancelada</strong> llego 01-01-25 <strong> Order Detail</strong>  <%- include("../partials/calificacion") %> 
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <strong>Gary</strong> deleted My Board1 in <strong>`Discussions`</strong>
+                                                <strong>en camino</strong> llego 01-01-25 <strong> Order Detail</strong> 
+                                                    
+                                                  
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <strong>Kensington</strong> deleted MyBoard3 in <strong>`Discussions`</strong>
+                                                <strong>Entregado</strong> llego 01-01-25 <strong> Order Detail</strong>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <strong>John</strong> deleted My Board1 in <strong>`Discussions`</strong>
+                                                <strong>Entregado</strong> llego 01-01-25 <strong> Order Detail</strong>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <strong>Skell</strong> deleted his post Look at Why this is.. in <strong>`Discussions`</strong>
+                                                <strong>Entregado</strong> llego 01-01-25 <strong> Order Detail</strong>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -135,7 +130,7 @@
     </div>
 
 <footer>
-    <%- include("partials/footer")%>
+    <%- include("../partials/footer")%>
 </footer>
 
 
