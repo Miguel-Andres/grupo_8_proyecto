@@ -1,53 +1,47 @@
 const fs = require("fs") ;
 const path = require ("path")
+const sequelize = require("sequelize")
 const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 const {check ,validationResult, body}= require("express-validator")
 const bcrypt = require("bcrypt")
+const db = require("../database/models")
+
 
 const userController = {
 
     registro :function(req, res, next) {
-        res.render('register', { title: 'registro',save: false })
+        res.render('users/register', { title: 'registro', save: false })
 
         console.log(req.body)
 
     
      },
 
-    ingresoDatos: function(req,res,next){
-           console.log(validationResult(req))
+    crear: function(req,res){
+        console.log(validationResult(req))
 
-           let errors = validationResult(req)
-
-
-            if (errors.isEmpty()){
-                
-              
-           
-            let usuario ={
-                name : req.body.name,
-                lastName :req.body.lastName,
-                email : req.body.email,
-                password : bcrypt.hashSync(req.body.password,2) ,
-                confirmpassword : req.body.confirmpassword,
-            }
-            let dataUsuarios = fs.readFileSync(usuariosDatabase,{encoding:"utf-8"})
+         db.user.create({
+           nombre: req.body.name,
+            apellido :req.body.lastName,
+            email : req.body.email,
+            password : bcrypt.hashSync(req.body.password,2) ,
             
-            let usuarios = JSON.parse(dataUsuarios)
+         }) 
 
-          
-                    usuarios.push(usuario)
+         res.redirect("users/list")
 
-                    fs.writeFileSync(usuariosDatabase, JSON.stringify(usuarios))
+
         
-                    res.render("register" ,{save: true})
-                    
-         }/*else del if error*/ else{
-                return res.render("register", {errors : errors.errors , save : false})
-            }
+           
+          
+
+
+           
+                
                    
              
-        } ,
+        },
+            
 
     login: function(req,res,next) {
         let dataUsuarios = fs.readFileSync(usuariosDatabase,{encoding:"utf-8"})
@@ -59,7 +53,7 @@ const userController = {
         })
 
         if (user) {
-            return res.redirect(301,"/users/profile")            
+            return res.redirect(301,"/users/profile" ,{title : "profile"})            
         } 
         
         return res.send("el usuario no existe")
@@ -67,9 +61,24 @@ const userController = {
 
 
     profile : function (req,res,next){
+
+        res.render( "users/profile")
         
 
-    }
+    } ,
+
+    edit : (req,res,next)=>{
+
+        res.render("users/Edit")
+    },
+
+    
+
+   
+
+
+
+  
 
 
 

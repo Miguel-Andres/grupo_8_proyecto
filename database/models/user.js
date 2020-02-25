@@ -25,6 +25,7 @@ module.exports = function (sequelize ,dataTypes){
         apellido: {
 
             type : dataTypes.STRING ,
+            allowNull : false ,
 
         },
 
@@ -39,17 +40,19 @@ module.exports = function (sequelize ,dataTypes){
             allowNull : false ,
 
 
-
         },
         pais: {
             type : dataTypes.STRING ,
+            allowNull : true,
 
         },
         ciudad: {
             type : dataTypes.STRING ,
+            allowNull : true ,
     },
         direccion:{
             type : dataTypes.STRING ,
+            allowNull : true ,
 
         },
 
@@ -67,6 +70,14 @@ module.exports = function (sequelize ,dataTypes){
         underscored : true ,
         
     })
+
+    user.associate = function(models){
+
+        user.hasOne(models.avatar,{
+            
+            foreignKey:"cliente_id"
+        })
+    }
 
 
     return user

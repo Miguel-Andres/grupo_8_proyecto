@@ -123,26 +123,8 @@ h1{
         width: 300px;
         height: 300px;
     }
-    /*productos "pizzas clasicas"*/
+  
     
-    /*.item{
-        border: dashed black 2px;
-        background-color:  rgba(82, 80, 97,0.3) ;
-        margin: 30px;
-        
-        width: 100px;
-        height: 100px;
-    }
-    .precios{
-       
-        background-color: white;
-        opacity: 0.3;
-        width: 200px;
-        height:200px;
-        margin: 30px ;
-       
-
-    }*/
 /*pie de pagina*/
 
 footer {
@@ -186,7 +168,60 @@ ul li{
 
 
 
+/* calificacion */
 
+.rating {
+    float:left;
+  }
+
+ 
+  .rating:not(:checked) > input {
+      position:absolute;
+      top:-9999px;
+      clip:rect(0,0,0,0);
+  }
+
+  .rating:not(:checked) > label {
+      float:right;
+      width:1em;
+      /* padding:0 .1em; */
+      overflow:hidden;
+      white-space:nowrap;
+      cursor:pointer;
+      font-size:150%;
+      /* line-height:1.2; */
+      color:#ddd;
+  }
+
+  .rating:not(:checked) > label:before {
+      content: '★ ';
+  }
+
+  .rating > input:checked ~ label {
+      color: dodgerblue;
+      
+  }
+
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+      color: dodgerblue;
+      
+  }
+
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+      color: dodgerblue;
+      
+  }
+
+  .rating > label:active {
+      position:relative;
+      top:2px;
+      left:2px;
+  }
 
 
 
