@@ -17,8 +17,13 @@ const userController = {
     
      },
 
-    crear: function(req,res){
+    crear: function(req,res,next){
         console.log(validationResult(req))
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()){
+
+
 
          db.user.create({
            nombre: req.body.name,
@@ -27,37 +32,50 @@ const userController = {
             password : bcrypt.hashSync(req.body.password,2) ,
             
          }) 
+         res.render("users/register" ,{save: true})
+        }else{
+           return res.render("users/register",{errors : errors.errors ,save : false})
+        }
 
-         res.redirect("users/list")
-
-
-        
-           
-          
-
-
-           
                 
                    
              
         },
             
 
-    login: function(req,res,next) {
-        let dataUsuarios = fs.readFileSync(usuariosDatabase,{encoding:"utf-8"})
+     login: function(req,res,next) {
 
-        let usuarios = JSON.parse(dataUsuarios)
 
-        let user = usuarios.find(function (usuario) {
-            return req.body.email == usuario.email && bcrypt.compareSync(req.body.password, usuario.password)
-        })
 
-        if (user) {
-            return res.redirect(301,"/users/profile" ,{title : "profile"})            
-        } 
+        db.user.findAll(value)
+         .then(
+             usuarios => {
+                let user = usuarios.find(function (usuario) {
+                    return req.body.email == usuario.email && bcrypt.compareSync(req.body.password, usuario.password)
+                })
         
-        return res.send("el usuario no existe")
-    },
+                if (user) {
+                    return res.redirect(301,"/users/profile" ,{title : "profile"})            
+                } 
+                
+                return res.send("el usuario no existe")
+             }
+
+            )   
+
+
+        
+       
+
+         
+        
+        },
+
+           
+        
+    
+ 
+       
 
 
     profile : function (req,res,next){

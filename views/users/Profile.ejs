@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Profile</title>
     <%- include("../partials/head") %>
+   
+  
     
 </head>
 <body>
+    <nav  class="header-profile">
+        <%- include("../partials/navUser") %>
+</nav>
+        
+   
+    
 
     <div class="container">
         <div class="row my-2">
+
+            <div class="col-lg-4 order-lg-1 text-center">
+                <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                <h6 class="mt-2 ">Upload a different photo</h6>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="avatar" class="form-control-file">
+                    <button type="submit">subir</button>
+                    
+                </form>
+                
+            </div>
+
+
+
+
             <div class="col-lg-8 order-lg-2">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -17,9 +39,7 @@
                     <li class="nav-item">
                         <a  data-target="#messages" data-toggle="tab" class="nav-link ">Messages</a>
                     </li>
-                    <li class="nav-item" >
-                        <a href ="/users/profile/edit"   class="nav-link " >Edit</a>
-                    </li>
+                    
                 </ul>
                 <div class="tab-content py-4">
                     <div class="tab-pane active" id="profile">
@@ -40,10 +60,16 @@
                                <p>
                                    Lorem ipsum dolor sit.
                                </p>
-                                <hr>
+                                
                                 <h6>email</h6>                            
                                 <p>Lorem, ipsum.</p>
+
+
+                                <a class="col-2 btn btn-danger float-right"  href="/users/profile/edit" >Editar</a>
+                                                                                 
+                    
                             </div>
+
                             <div class="col-md-12">
                                 <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span> Compras recientes </h5>
                                 <table class="table table-sm table-hover table-striped">
@@ -118,16 +144,7 @@
                     
                 </div>
             </div>
-            <div class="col-lg-4 order-lg-1 text-center">
-                <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
-                <h6 class="mt-2 ">Upload a different photo</h6>
-                <form action="" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="avatar" class="form-control-file">
-                    <button type="submit">subir</button>
-                    
-                </form>
-                
-            </div>
+            
         </div>
     </div>
 

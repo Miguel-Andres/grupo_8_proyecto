@@ -4,13 +4,17 @@
    <%- include("../partials/head") %>
 </head>
 <body>
-    <header>
-        <%- include("../partials/header") %>
+    <header class="header-profile">
+        <%- include("../partials/navUser") %>
 
     </header>
+
+    <main id="body-edit"> 
+
+  
     
 
-    <div class="tab-pane container col-6 " style="background-color: aqua;" id="edit" >
+    <div class="tab-pane container col-6 "  id="edit" >
         <form role="form ">
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">First name</label>
@@ -71,6 +75,7 @@
             </div>
         </form>
     </div>
+</main>
 
     <footer>
         <%- include("../partials/footer") %>

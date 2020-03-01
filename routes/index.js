@@ -34,9 +34,9 @@ router.get('/register', userController.registro);
 
 
 
-let registerValidator = require('../middlewares/validator')
+let validator = require('../middlewares/validator')
 
-router.post("/register", registerValidator, userController.crear)
+router.post("/register", validator, userController.crear)
 
 
 
