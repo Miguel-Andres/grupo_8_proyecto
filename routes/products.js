@@ -5,15 +5,15 @@ var productController = require("../controllers/productController.js")
 
 
 /* GET productDtaile page. */
-router.get('/', productController.productos);
+router.get('/', productController.products);
 
 /*====================================================================*/
 
 /* GET add product page. */
-router.get('/create', productController.formulario);
+router.get('/create', productController.create);
 
 /* Post add product page. */
-router.post('/create', productController.cargaProduct);
+router.post('/create', productController.addProduct);
 
 /* GET detail product page. */
 router.get('/detail', productController.detail);
@@ -22,11 +22,11 @@ router.get('/detail', productController.detail);
 router.get('/detail/:id', productController.detailId);
 
 /* Actualizaicon */
-router.get('/editar/:id', productController.editar);
-router.put('/editar/:id', productController.actualizar);
+router.get('/edit/:id', productController.edit);
+router.post('/edit/:id', productController.update);
 
 /* Borrar */
-router.delete('/borrar/:id', productController.borrar);
+router.post('/delete/:id', productController.delete);
 
 
 

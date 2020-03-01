@@ -6,40 +6,51 @@ const models = require("../database/models")
 
 const productController ={
 
-      productos :function(req, res, next) {
+      products :function(req, res, next) {
         res.render('productDetail', { title: 'menu' })
         
 
     },
 
-    
-    formulario :function(req, res, next) {
-      res.render('addProduct', { title: 'formulario'}) 
-      console.log(req.body)
-    },
 
-    cargaProduct: function(req,res,next){
-       let product = req.body;
-       let dataProduct = fs.readFileSync(productDatabase,{encoding:"utf-8"})
-    
-       let products = JSON.parse(dataProduct)
-         products.push(product)
-  
-        fs.writeFileSync(productDatabase, JSON.stringify(products))
-  
-        res.redirect("/products/create") 
-   },
-   
+       create: function(req, res, next){
+        models.productos.findAll()
+          .then(function(productos){
+            res.render("addProduct",{productos:productos})
+          })
+          .catch(err => {
+           res.send("hubo un error,intentalo mas tarde")
+       })
+      },
+
+
+      addProduct: function(req, res, next){            
+        models.productos.create({
+          nombre: req.body.nombre,
+          precio_individual: req.body.precio_individual,
+          precio_mediana: req.body.precio_mediana,
+          precio_grande: req.body.precio_grande,
+          detalle: req.body.detalle,
+          producto: req.body.producto,
+          categoria:req.body.categoria,
+        })
+            
+             res.redirect("/products/detail")
+  },
+
+
        detail :function(req, res, next) {
         models.productos.findAll()
-        .then(resultado =>{
-          res.json(resultado)
-        }
-          )
+        .then(function(productos){
+          res.render("listadoDeProductos", {productos:productos})
+        })
 
-   },
+            .catch(err => {
+                res.send("hubo un error,intentalo mas tarde")
+            })
+  },
 
-       detailId : function(req, res){
+       detailId : function(req, res, next){
            models.productos.findByPk(req.params.id)
             .then(function(productos){
               res.render("listaDetalleId", {productos:productos})
@@ -50,12 +61,47 @@ const productController ={
   
     
   },
-  editar :function(req, res, next) {
+      
+     edit: function(req, res, next){
+      models.productos.findByPk(req.params.id)
+      .then(function(productos){
+        res.render("editProduct", {productos:productos})
+      })
+    .catch(err => {
+        res.send("hubo un error,intentalo mas tarde")
+    })
+    }, 
+
+
+  update: function(req, res, next){
+    models.productos.update({
+      nombre: req.body.nombre,
+      precio_individual: req.body.precio_individual,
+      precio_mediana: req.body.precio_mediana,
+      precio_grande: req.body.precio_grande,
+      detalle: req.body.detalle,
+      producto: req.body.producto,
+      categoria:req.body.categoria, 
+
+    },  {
+      where:{
+        id: req.params.id,
+      }
+      
+    });
+    res.redirect("/products/edit/" + req.params.id)
+
   },
-  actualizar :function(req, res, next) {
+
+
+  delete: function(req, res, next){
+    models.productos.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.redirect("/products/detail");
   },
-  borrar :function(req, res, next) {
-  }
 
 
   }
@@ -65,31 +111,3 @@ const productController ={
 
 
   
-  /**/
-
-
-
-
-   /*  
-    cargaProduct: function(req,res,next){
-    
-      let product = {
-        categoria: req.body.categoria ,
-        nombre: req.body.nombre ,
-        pequeña: req.body.pequeña ,
-        mediana: req.body.mediana ,
-        grande: req.body.grande ,
-        detalles: req.body.detalles ,
-        producto: req.body.producto ,
-        idProducto: req.body.idProducto ,
-      }
-      let dataProduct = fs.readFileSync(productDatabase,{encoding:"utf-8"})
-    
-     let products = JSON.parse(dataProduct)
-       products.push(product)
-
-      fs.writeFileSync(productDatabase, JSON.stringify(products))
-
-      res.send("el producto ha sido cargado") 
-    
-    } */

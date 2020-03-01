@@ -21,7 +21,14 @@
     </header>
     <!--Inicio secction-->
 
-    <h1><%=productos.nombre%> </h1>
+    <h1>Listado de Productos </h1>
+    <br>
+    <h2><% productos.forEach( productos => { %>
+        <li>
+           <a href="/products/detail/<%=productos.id%>"> <%=productos.nombre%> </a>
+        </li>
+    <%})%> 
+      </h2>
     
 
 
