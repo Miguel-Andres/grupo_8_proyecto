@@ -14,14 +14,11 @@ const productController ={
 
 
        create: function(req, res, next){
-        models.productos.findAll()
-          .then(function(productos){
+        
+          
             res.render("addProduct",{productos:productos})
-          })
-          .catch(err => {
-           res.send("hubo un error,intentalo mas tarde")
-       })
-      },
+       },
+      
 
 
       addProduct: function(req, res, next){            
