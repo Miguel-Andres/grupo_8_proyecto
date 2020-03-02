@@ -2,21 +2,23 @@ var {check,validationResult,body} = require("express-validator")
 const fs = require("fs")
 const path = require ("path") ;
 const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
+const db = require("../database/models")
+const sequelize = require("sequelize")
 
 
 module.exports = [
     check("email", "ingrese un email valido" ).isEmail(),
-    body("email").custom( value =>{ 
-      let dataUsuarios = fs.readFileSync(usuariosDatabase,{encoding:"utf-8"})
-      let usuarios = JSON.parse(dataUsuarios)
-      for (let i= 0; i<usuarios.length ; i++){
-        if(usuarios[i].email == value){
-          return false ;
-        }
+    /*.custom(value => {
+      db.user.email.findAll(value)
+      .then( value =>{ 
+      if(value == db.user.email){
+        return false
+      }{
+        return true ;
       }
-      return true ;
-  
-    }).withMessage("usuario ya existente"),
+      })
+
+    }).withMessage("usuario ya existente"),*/
     check("name", "nombre invalido").isLength({min:1}),
     check("lastName" ,"Apellido invalido").isLength({min:1}),
     check("password","ingrese clave valida" ).isLength({min:3}).custom((value,{req, loc, path}) => {
@@ -28,3 +30,16 @@ module.exports = [
       }
   }),
   ]
+
+
+
+
+
+
+
+
+
+
+
+ 
+
