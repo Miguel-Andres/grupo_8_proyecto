@@ -20,10 +20,7 @@ USE `baruk_db`;
 CREATE TABLE IF NOT EXISTS `avatars` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
-  `cliente_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_avatars_cliente _idx` (`cliente_id`),
-  CONSTRAINT `fk_avatars_cliente ` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
@@ -38,8 +35,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `pais` varchar(45) DEFAULT NULL,
   `ciudad` varchar(45) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `avatar_id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
@@ -48,10 +44,16 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 -- Volcando estructura para tabla baruk_db.productos
 CREATE TABLE IF NOT EXISTS `productos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  `categoria` varchar(45) DEFAULT NULL,
+  `nombre` varchar(45) NOT NULL,
+  `categoria` varchar(45) NOT NULL,
+  `precio_individual` int(11) NOT NULL,
+  `precio_mediana` int(11) NOT NULL,
+  `precio_grande` int(11) NOT NULL,
+  `detalle` longtext NOT NULL,
+  `producto` varchar(45) NOT NULL,
+  `imagen` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
 
@@ -60,7 +62,6 @@ CREATE TABLE IF NOT EXISTS `ventas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `producto_id` int(11) DEFAULT NULL,
   `cliente_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
