@@ -7,23 +7,21 @@ const models = require("../database/models")
 const productController ={
 
       products :function(req, res, next) {
-        res.render('productDetail', { title: 'menu' })
+        res.render('./products/productDetail', { title: 'menu' })
         
 
     },
 
 
        create: function(req, res, next){
-         models.productos.findAll()
-         .then(function(productos){
-          res.render("./products/addProduct",{productos:productos})
-
-         })
-        
-          
-            
-       },
-      
+        models.productos.findAll()
+          .then(function(productos){
+            res.render("./products/addProduct",{productos:productos})
+          })
+          .catch(err => {
+           res.send("hubo un error,intentalo mas tarde")
+       })
+      },
 
 
       addProduct: function(req, res, next){            
@@ -44,7 +42,7 @@ const productController ={
        detail :function(req, res, next) {
         models.productos.findAll()
         .then(function(productos){
-          res.render("listadoDeProductos", {productos:productos})
+          res.render("./products/listadoDeProductos", {productos:productos})
         })
 
             .catch(err => {
@@ -55,7 +53,7 @@ const productController ={
        detailId : function(req, res, next){
            models.productos.findByPk(req.params.id)
             .then(function(productos){
-              res.render("listaDetalleId", {productos:productos})
+              res.render("./products/listaDetalleId", {productos:productos})
             })
           .catch(err => {
               res.send("hubo un error,intentalo mas tarde")
@@ -67,7 +65,7 @@ const productController ={
      edit: function(req, res, next){
       models.productos.findByPk(req.params.id)
       .then(function(productos){
-        res.render("editProduct", {productos:productos})
+        res.render("./products/editProduct", {productos:productos})
       })
     .catch(err => {
         res.send("hubo un error,intentalo mas tarde")
