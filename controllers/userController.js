@@ -61,39 +61,11 @@ const userController = {
                 res.send("el usuario no existe")
             }
         })
-
-
-
-        
-        
-
-         /*.then(
-             usuarios => {
-                let user = usuarios.find(function (usuario) {
-                    return req.body.email == user.email && bcrypt.compareSync(req.body.password, db.user.password)
-                })
-        
-                if (user) {
-                    return res.redirect(301,"/users/profile" ,{title : "profile"})            
-                } 
-                
-                return res.send("el usuario no existe")
-             }
-
-            )*/   
-
-
-        
-       
-
-         
+   
         
         },
 
            
-        
-    
- 
        
 
 
@@ -129,15 +101,7 @@ const userController = {
 
         },
     
-          
-
-    
-
-   
-
-
-
-  
+        
 
 
 

@@ -21,16 +21,32 @@
     </header>
     <!--Inicio secction-->
 
-    <h1>Producto : <%=productos.nombre%> </h1>
-    <h2>Categoria :<%=productos.categoria%> </h2>
-   <h3>Detalle : <%=productos.detalle%></h3>
- 
-   <a href="/products/edit/<%=productos.id%>" class="btn btn-primary">Editar   <i ></i></a>
+   <section class="container-fluid productos">
+    <div class="row">
+      <div class="col-12 tit">
+        <h2 class="titulo-pizzas">Pizza <%=productos.categoria%></h2>
+      </div>
+    </div>
+    
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card box" >
+                <img src="https://i.ibb.co/jy8Jpxz/pollo-y-bbq.jpg" class="card-img-top" alt="Pollo y bbq">
+                <div class="card-body">
+                <h5 class="card-title"><%=productos.nombre%></h5>
+                <p class="card-text"><%=productos.detalle%>.</p>
+                <h2><%=productos.precio_grande%></h2>
+                <div class="btn-group">
+                  <a href="/products/edit/<%=productos.id%>" class="btn btn-primary">Editar   <i ></i></a>
    <form action="/products/delete/<%=productos.id%>" method="POST">
    <button type="submit" class="btn btn-danger" >
     Borrar
     </button>
   </form>
+                  
+         </div> 
+    </section>  
+ 
 
     <!--footer-->
     <footer>

@@ -23,7 +23,7 @@ router.post("/",userController.login)
 
 /* GET add car page. */
 router.get('/carProduct', function(req, res, next) {
-  res.render('carProduct', { title: 'litle car' });
+  res.render('./products/carProduct', { title: 'litle car' });
 });
 
 /*====================================================================*/
