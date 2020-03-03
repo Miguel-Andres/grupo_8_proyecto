@@ -5,3 +5,5 @@ Miguel silva .
 - los ultimos esprint hemos estado muy desordenados con las entregas .
 - tenemos que defir mas cosas puntuales sobre el proyecto 
 - hacer diariamente una tarea 
+- tenemos problemas con unir la base de datos que trabajamos por separados 
+

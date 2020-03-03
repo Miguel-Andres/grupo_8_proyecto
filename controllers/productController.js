@@ -14,9 +14,14 @@ const productController ={
 
 
        create: function(req, res, next){
+         models.productos.findAll()
+         .then(function(productos){
+          res.render("./products/addProduct",{productos:productos})
+
+         })
         
           
-            res.render("addProduct",{productos:productos})
+            
        },
       
 

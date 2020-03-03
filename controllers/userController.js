@@ -46,13 +46,45 @@ const userController = {
 
      login: function(req,res,next) {
 
+        db.sequelize.query("select * from clientes")
+        .then(function(resultados){
+
+            let datos = resultados[0]
+            
+            let contraseña = bcrypt.compareSync(req.body.password, datos.password)
+            console.log(contraseña)
+
+           let user = datos.find(function(usuario){
+               return req.body.email == usuario.email 
+           })
+           console.log(user )
+           if(user){
+            let contraseña = bcrypt.compareSync(req.body.password, datos.password)
+            console.log(contraseña)
+
+            return res.send("si existe")
+
+           } else{
+               res.send("No existe")
+           }
+
+            
 
 
-        db.user.findAll(value)
-         .then(
+          
+
+            
+        })
+
+
+
+        
+        
+
+         /*.then(
              usuarios => {
                 let user = usuarios.find(function (usuario) {
-                    return req.body.email == usuario.email && bcrypt.compareSync(req.body.password, usuario.password)
+                    return req.body.email == user.email && bcrypt.compareSync(req.body.password, db.user.password)
                 })
         
                 if (user) {
@@ -62,7 +94,7 @@ const userController = {
                 return res.send("el usuario no existe")
              }
 
-            )   
+            )*/   
 
 
         
