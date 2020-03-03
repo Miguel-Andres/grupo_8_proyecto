@@ -4,6 +4,7 @@ const multer = require("multer");
 const path = require("path")
 var userController = require("../controllers/userController.js")
 const multerAvatar = require ("../middlewares/multerAvatar")
+let validator = require('../middlewares/validator')
 
 const models = require("../database/models")
 
@@ -18,7 +19,11 @@ router.post("/profile", multerAvatar , userController.profile )
 
 //user profile edit get and post
 
-router.get("/profile/edit" ,userController.edit ) 
+router.get("/profile/edit" ,userController.profileEdit ) 
+
+router.post("/profile/edit",validator, userController.edit)
+
+router.delete("/delete",userController.delete)
 
 
 
@@ -31,7 +36,7 @@ router.get("/list" , (req,res,next) => {
     res.json(resultado)
   }
     )
-} )
+}
+)
 
-
-module.exports = router;
+ module.exports = router;

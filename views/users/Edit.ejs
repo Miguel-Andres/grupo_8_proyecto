@@ -19,35 +19,35 @@
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">First name</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="Jane">
+                    <input class="form-control" type="text" value="Jane" name="name">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">Last name</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="Bishop">
+                    <input class="form-control" type="text" value="Bishop" name="lastName">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">Email</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="email" value="email@gmail.com">
+                    <input class="form-control" type="email" value="email@gmail.com" name="email">
                 </div>
             </div>                                                   
             
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">Address</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" value="" placeholder="Street">
+                    <input class="form-control" type="text" value="" placeholder="Street" name="direccion">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <div class="col-lg-6">
-                    <input class="form-control" type="text" value="" placeholder="City">
+                    <input class="form-control" type="text" value="" placeholder="City" name="ciudad">
                 </div>
                 <div class="col-lg-3">
-                    <input class="form-control" type="text" value="" placeholder="State">
+                    <input class="form-control" type="text" value="" placeholder="State" name="estado">
                 </div>
             </div>
             
@@ -55,21 +55,23 @@
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">Password</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="password" value="11111122333">
+                    <input class="form-control" type="password" value="11111122333" name="password">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="password" value="11111122333">
+                    <input class="form-control" type="password" value="11111122333" name="confirmpassword">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"> </label>
                 <div class="col-lg-9">
                     <input type="reset" class="btn btn-secondary" value="Cancel">
-                    <input type="button" class="btn btn-primary" value="Save Changes">
-                    <input type="button" class="col-2 btn btn-danger float-right" value="delete">
+                    <input type="sumit" class="btn btn-primary" value="Save Changes">
+                    <form method="POST" action="/users/delete/?method=DELETE">
+                    <input type="submit" class="col-2 btn btn-danger float-right" value="delete">
+                </form>
                     
                 </div>
             </div>

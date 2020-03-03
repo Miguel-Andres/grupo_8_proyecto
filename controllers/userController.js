@@ -22,16 +22,17 @@ const userController = {
         let errors = validationResult(req)
 
         if(errors.isEmpty()){
+            db.user.create({
+                nombre: req.body.name,
+                 apellido :req.body.lastName,
+                 email : req.body.email,
+                 password : bcrypt.hashSync(req.body.password,2) ,
+                 
+              }).then() 
 
 
 
-         db.user.create({
-           nombre: req.body.name,
-            apellido :req.body.lastName,
-            email : req.body.email,
-            password : bcrypt.hashSync(req.body.password,2) ,
-            
-         }) 
+         
          res.render("users/register" ,{save: true})
         }else{
            return res.render("users/register",{errors : errors.errors ,save : false})
@@ -85,10 +86,32 @@ const userController = {
 
     } ,
 
-    edit : (req,res,next)=>{
+    profileEdit : (req,res,next)=>{
 
         res.render("users/Edit")
     },
+
+    edit:(req,res,next)=>{
+        db.user.update({
+            nombre: req.body.name,
+            apellido :req.body.lastName,
+          password : bcrypt.hashSync(req.body.password,2) ,
+            
+         })
+
+        },
+
+        delete: (req,res,next)=>{
+            db.user.destroy({
+               where :{
+                   id : req.session.id
+               }
+            })
+            res.redirect("/", {msg: "el usuario fue borrado"})
+
+        },
+    
+          
 
     
 

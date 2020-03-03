@@ -2,7 +2,7 @@
 <html>
 
 <head>
- <%- include("partials/head") %>
+ <%- include("../partials/head") %>
 
 </head>
 
@@ -21,20 +21,20 @@
     </header>
     <!--Inicio secction-->
 
-    <h1>Producto : <%=productos.nombre%> </h1>
-    <h2>Categoria :<%=productos.categoria%> </h2>
-   <h3>Detalle : <%=productos.detalle%></h3>
- 
-   <a href="/products/edit/<%=productos.id%>" class="btn btn-primary">Editar   <i ></i></a>
-   <form action="/products/delete/<%=productos.id%>" method="POST">
-   <button type="submit" class="btn btn-danger" >
-    Borrar
-    </button>
-  </form>
+    <h1>Listado de Productos </h1>
+    <br>
+    <h2><% productos.forEach( productos => { %>
+        <li>
+           <a href="/products/detail/<%=productos.id%>"> <%=productos.nombre%> </a>
+        </li>
+    <%})%> 
+      </h2>
+    
+
 
     <!--footer-->
     <footer>
-      <%- include("partials/footer")%>
+      <%- include("../partials/footer")%>
     </footer>
 
   </div>
