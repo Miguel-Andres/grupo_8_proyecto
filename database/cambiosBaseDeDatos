@@ -1,0 +1,22 @@
+3/3/20
+
+ALTER TABLE `baruk_db`.`productos` 
+CHANGE COLUMN `nombre` `nombre` VARCHAR(200) NOT NULL ,
+CHANGE COLUMN `categoria` `categoria` VARCHAR(200) NOT NULL ,
+CHANGE COLUMN `producto` `producto` VARCHAR(200) NOT NULL ,
+CHANGE COLUMN `imagen` `imagen` VARCHAR(200) NOT NULL ;
+
+ALTER TABLE `baruk_db`.`clientes` 
+CHANGE COLUMN `nombre` `nombre` VARCHAR(200) NULL DEFAULT NULL ,
+CHANGE COLUMN `apellido` `apellido` VARCHAR(200) NULL DEFAULT NULL ,
+CHANGE COLUMN `email` `email` VARCHAR(200) NULL DEFAULT NULL ,
+CHANGE COLUMN `password` `password` VARCHAR(200) NULL DEFAULT NULL ,
+CHANGE COLUMN `pais` `pais` VARCHAR(200) NULL DEFAULT NULL ,
+CHANGE COLUMN `ciudad` `ciudad` VARCHAR(200) NULL DEFAULT NULL ,
+CHANGE COLUMN `direccion` `direccion` VARCHAR(200) NULL DEFAULT NULL ,
+CHANGE COLUMN `avatar_id` `avatar_id` VARCHAR(200) NULL DEFAULT NULL ;
+
+ALTER TABLE `baruk_db`.`avatars` 
+CHANGE COLUMN `nombre` `nombre` VARCHAR(200) NULL DEFAULT NULL ;
+
+
