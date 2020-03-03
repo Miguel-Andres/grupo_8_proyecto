@@ -36,8 +36,10 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `ciudad` varchar(45) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL,
   `avatar_id` varchar(45) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
 
@@ -53,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `productos` (
   `producto` varchar(45) NOT NULL,
   `imagen` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
 
