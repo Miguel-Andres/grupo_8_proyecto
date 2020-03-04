@@ -31,10 +31,10 @@
       <div class="row">
         <div class="col-12 col-sm-6 col-lg-3">
               <div class="card box" >
-                <img src="https://i.ibb.co/jy8Jpxz/pollo-y-bbq.jpg" class="card-img-top" alt="Pollo y bbq">
+                <img src="<%=productos.imagen%>" class="card-img-top" alt="Pollo y bbq">
                 <div class="card-body">
-                <h5 class="card-title"><%=productos.nombre%></h5>
-                <p class="card-text"><%=productos.detalle%>.</p>
+                <h1 class="card-title"><%=productos.nombre%></h1>
+                <p class="card-text"><small><%=productos.detalle%>.</small></p>
                 <h2><%=productos.precio_grande%></h2>
                 <div class="btn-group">
                   <a href="/products/edit/<%=productos.id%>" class="btn btn-primary">Editar   <i ></i></a>
@@ -43,10 +43,11 @@
     Borrar
     </button>
   </form>
-                  
+               
          </div> 
     </section>  
  
+    
 
     <!--footer-->
     <footer>

@@ -29,6 +29,11 @@ router.post('/edit/:id', productController.update);
 router.post('/delete/:id', productController.delete);
 
 
+/* GET add car page. */
+router.get('/carProduct/:id', productController.car);
+  
+
+
 
 module.exports = router;
 
