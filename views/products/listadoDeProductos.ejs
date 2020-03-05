@@ -23,32 +23,30 @@
 
     <h1>Listado de Productos </h1>
     <br>
-    <h2><% productos.forEach( productos => { %>
-
-      <section class="container-fluid productos">
-        <div class="row">
+    <section class="container-fluid productos">
+      <div class="row">
         <div class="col-12 tit">
-        <h2 class="titulo-pizzas">Pizza <%=productos.categoria%></h2>
+          <h2 class="titulo-pizzas">Pizza <%=productos.categoria%></h2>
         </div>
-        </div>
+      </div>
+      <div class="row">
+        <% productos.forEach( productos => { %>
+
         
-          <div class="row">
-            <div class="col-12 col-sm-6 col-lg-3">
-             <div class="card box" >
-             <img src="<%=productos.imagen%>" class="card-img-top" alt="Pollo y bbq">
-             <div class="card-body">
-              <h5 class="card-title"><a href="/products/detail/<%=productos.id%>"> <%=productos.nombre%> </a></h5>
-              <h3 class="card-text"><%=productos.detalle%>.</h3>
-              <h4>$<%=productos.precio_grande%></h4>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card box" >
+              <img src="<%=productos.imagen%>" class="card-img-top" alt="Pollo y bbq">
+              <div class="card-body">
+                <h5 class="card-title"><a href="/products/detail/<%=productos.id%>"> <%=productos.nombre%> </a></h5>
+                <h3 class="card-text"><%=productos.detalle%>.</h3>
+                <h4>$<%=productos.precio_grande%></h4>
               </div>
-              </div>  
-              </div>  
-             </div> 
-        </section>  
-        
-    <%})%> 
-      </h2>
-  
+            </div>  
+          </div>  
+          
+          <% }) %>   
+      </div> 
+    </section>  
     <!--footer-->
     <footer>
       <%- include("../partials/footer")%>

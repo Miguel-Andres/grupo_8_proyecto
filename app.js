@@ -32,7 +32,8 @@ app.use(methodOverride("_method"));
 app.use(session({
   secret : "baruk",
   resave : false ,
-  saveUninitialized :true
+  saveUninitialized :true,
+  cookie: { maxAge: 8*60*60*1000 }, // 8hs
 }))
 app.use(auth)
 

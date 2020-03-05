@@ -19,9 +19,6 @@ CHANGE COLUMN `avatar_id` `avatar_id` VARCHAR(200) NULL DEFAULT NULL ;
 ALTER TABLE `baruk_db`.`avatars` 
 CHANGE COLUMN `nombre` `nombre` VARCHAR(200) NULL DEFAULT NULL ;
 
-<<<<<<< HEAD
------------------------------------------------------------------------------------------------------
-=======
 ----------------------------------------------------
 3/3/20
 
@@ -38,4 +35,3 @@ UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/g7ScW5Z/jamon-y-m
 UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/zFKJmrh/Provolone.jpg' WHERE (`id` = '7');
 UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/X4pBsYg/Cheddar.jpg' WHERE (`id` = '8');
 
->>>>>>> ba3bf3b64b865e4267d7e5f477bba8908d07413c

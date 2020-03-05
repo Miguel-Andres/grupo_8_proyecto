@@ -18,8 +18,9 @@ const userController = {
      },
 
     crear: function(req,res,next){
-        console.log(validationResult(req))
         let errors = validationResult(req)
+
+        console.log('errores de validacion', errors)
 
         if(errors.isEmpty()){
             db.user.create({
@@ -28,7 +29,7 @@ const userController = {
                  email : req.body.email,
                  password : bcrypt.hashSync(req.body.password,2) ,
                  
-              }).then() 
+              })
 
 
 
@@ -63,8 +64,6 @@ const userController = {
 
                     // creamos usuarios en locals
                     // req.locals.user = req.session.user
-
-                    
                     
                     return res.redirect("/users/profile" )
                 } else {
@@ -83,10 +82,11 @@ const userController = {
 
 
     profile : function (req,res,next){
-        let user = req.session.user
-        res.render( "users/profile" )
-        
+        console.log('sesion', req.session)
 
+        res.render( "users/profile", {
+            user: req.session.user
+        } )
     } ,
 
     profileEdit : (req,res,next)=>{
@@ -95,13 +95,21 @@ const userController = {
     },
 
     edit:(req,res,next)=>{
+        console.log('session', req.session.user)
+
         db.user.update({
             nombre: req.body.name,
             apellido :req.body.lastName,
-          password : bcrypt.hashSync(req.body.password,2) ,
-            
-         })
-
+            pais : req.body.pais ,
+            ciudad : req.body.ciudad ,
+            direccion :req .body.direccion ,
+            //password : bcrypt.hashSync(req.body.password,2),
+         },{
+            where:{
+              id: req.session.user.id,
+            }
+          })
+          res.redirect("/users/profile")
         },
 
         delete: (req,res,next)=>{
