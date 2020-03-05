@@ -19,4 +19,4 @@ CHANGE COLUMN `avatar_id` `avatar_id` VARCHAR(200) NULL DEFAULT NULL ;
 ALTER TABLE `baruk_db`.`avatars` 
 CHANGE COLUMN `nombre` `nombre` VARCHAR(200) NULL DEFAULT NULL ;
 
-
+-----------------------------------------------------------------------------------------------------

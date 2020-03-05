@@ -6,6 +6,10 @@ var logger = require('morgan');
 
 const methodOverride = require ("method-override")
 
+const session = require("express-session")
+const auth = require("./middlewares/auth")
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
@@ -25,7 +29,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride("_method"));
 
-
+app.use(session({
+  secret : "baruk",
+  resave : false ,
+  saveUninitialized :true
+}))
+app.use(auth)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

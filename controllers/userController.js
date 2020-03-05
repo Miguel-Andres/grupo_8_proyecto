@@ -53,7 +53,20 @@ const userController = {
             
             if(user){
                 if( bcrypt.compareSync(req.body.password, user.password)){
-                    return res.redirect(301,"/users/profile" )
+                    //login correcto
+
+                    //limpiar los datos que no queremos en session puedo sen muchos 
+                    delete user.password
+
+                    // creamos usuario session  
+                    req.session.user = user
+
+                    // creamos usuarios en locals
+                    // req.locals.user = req.session.user
+
+                    
+                    
+                    return res.redirect("/users/profile" )
                 } else {
                     res.send("No existe la contraseña")
                 }
@@ -98,8 +111,8 @@ const userController = {
 
 
     profile : function (req,res,next){
-
-        res.render( "users/profile")
+        let user = req.session.user
+        res.render( "users/profile" )
         
 
     } ,
