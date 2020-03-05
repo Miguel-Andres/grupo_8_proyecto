@@ -21,11 +21,6 @@ router.get('/', function(req, res, next) {
 /* POST HOME LOGGIN */
 router.post("/",userController.login)
 
-/* GET add car page. */
-router.get('/carProduct', function(req, res, next) {
-  res.render('carProduct', { title: 'litle car' });
-});
-
 /*====================================================================*/
 /* GET register page y POST */
 

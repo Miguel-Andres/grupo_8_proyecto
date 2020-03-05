@@ -7,11 +7,15 @@ const models = require("../database/models")
 const productController ={
 
       products :function(req, res, next) {
-        res.render('./products/productDetail', { title: 'menu' })
-        
-
-    },
-
+          models.productos.findAll()
+           .then(function(productos){
+             res.render('./products/productDetail', {productos:productos})
+       })
+           .catch(err => {
+            res.send("hubo un error,intentalo mas tarde")
+         })
+  },
+  
 
        create: function(req, res, next){
         models.productos.findAll()
@@ -89,7 +93,7 @@ const productController ={
       }
       
     });
-    res.redirect("/products/edit/" + req.params.id)
+    res.redirect("/products/detail/" + req.params.id)
 
   },
 
@@ -102,6 +106,19 @@ const productController ={
     })
     res.redirect("/products/detail");
   },
+
+
+
+    car : function(req, res, next){
+      models.productos.findByPk(req.params.id)
+        .then(function(productos){
+         res.render("./products/carProduct", {productos:productos})
+        })
+        .catch(err => {
+         res.send("hubo un error,intentalo mas tarde")
+        })
+
+    },
 
 
   }
