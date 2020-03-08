@@ -77,6 +77,12 @@ const userController = {
         
         },
 
+        logaout : (req,res)=> {
+
+            req.session.destroy()
+            res.redirect("/")
+        },
+
            
        
 
@@ -109,7 +115,9 @@ const userController = {
               id: req.session.user.id,
             }
           })
-          res.redirect("/users/profile")
+          let user =req.session.user
+        
+          res.redirect("/users/profile" ,{user :user})
         },
 
         delete: (req,res,next)=>{

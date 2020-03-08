@@ -80,10 +80,10 @@ body{
           
     
 }
-h1{
+/*h1{
     display: flex;
     justify-content: center;
-}
+}*/
 .boton-usuario {
     display: flex;
     
@@ -155,9 +155,7 @@ h1{
             font-family: 'Kalam', cursive;
             color: rgba(14, 107, 150, 0.719);
         }
-        h3 {
-            font-family: tahoma;
-        }
+        
     /*formulario*/
     .prueba{
         background-color:rgb(230, 225, 225);
@@ -285,5 +283,55 @@ ul li{
       padding: 4px;
   }
 
+/*-------- inicio pagina de error --------------*/
 
-
+.error{    
+    
+    font-family: "montserrat" , sans-serif;
+     background-image: linear-gradient(125deg,#2c3e50,#34495e)
+    
+ }
+ .papa{
+    display: flex;
+    justify-content: center;
+    margin: 0px;  
+        
+ }
+ .papa2{
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+#h1error{
+    letter-spacing: 70px;
+    font-size: 150px;  
+    margin: 30px;
+    background: url(../images/images1.jpg) center;
+    -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+     
+ 
+}
+#h2error{
+    color: tomato;    
+    margin: 0;
+    font-size: 70px;
+}
+#h3error{    
+    
+    font-size: 70px;  
+}
+#buterror{
+    text-decoration: none;
+    background-color :#e74c3c;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    border: solid yellow;
+    width: 30%;
+    
+   
+    
+}

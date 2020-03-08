@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include("partials/head") %>
+    
 </head>
-<body>
-   <h1 style="color :red"> <%= message %></h1>
-<h2  style="background-color: aqua;"><%= error.status %></h2>
+<body class="error">
 
-<pre><%= error.stack %></pre>
+
+
+    
+
+    <div class="papa">
+
+        <div class="papa2" >
+            <h1 id="h1error" >404</h1>   
+            
+            <h2 id="h2error">ERROR</h2>
+
+           <h3 id="h3error">Oops !! Page not found</h3>
+
+
+          <div><a id="buterror" href="/">BACK TO HOME</a></div>
+            </div>
+
+           
+     </div>
+     
+        
+  
     
 </body>
 </html>
