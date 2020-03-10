@@ -9,18 +9,29 @@ const productController ={
       products :function(req, res, next) {
           models.productos.findAll()
            .then(function(productos){
-             res.render('./products/productDetail', {productos:productos})
+             res.render('./products/Detail', {productos:productos})
        })
            .catch(err => {
             res.send("hubo un error,intentalo mas tarde")
          })
   },
   
+  productId : function(req, res, next){
+    models.productos.findByPk(req.params.id)
+     .then(function(productos){
+       res.render("./products/DetailId", {productos:productos})
+     })
+   .catch(err => {
+       res.send("hubo un error,intentalo mas tarde")
+   })
+
+
+},
 
        create: function(req, res, next){
         models.productos.findAll()
           .then(function(productos){
-            res.render("./products/addProduct",{productos:productos})
+            res.render("./products/add",{productos:productos})
           })
           .catch(err => {
            res.send("hubo un error,intentalo mas tarde")
@@ -39,37 +50,14 @@ const productController ={
           categoria:req.body.categoria,
         })
             
-             res.redirect("/products/detail")
+             res.redirect("/products")
   },
 
-
-       detail :function(req, res, next) {
-        models.productos.findAll()
-        .then(function(productos){
-          res.render("./products/listadoDeProductos", {productos:productos})
-        })
-
-            .catch(err => {
-                res.send("hubo un error,intentalo mas tarde")
-            })
-  },
-
-       detailId : function(req, res, next){
-           models.productos.findByPk(req.params.id)
-            .then(function(productos){
-              res.render("./products/listaDetalleId", {productos:productos})
-            })
-          .catch(err => {
-              res.send("hubo un error,intentalo mas tarde")
-          })
-  
-    
-  },
       
      edit: function(req, res, next){
       models.productos.findByPk(req.params.id)
       .then(function(productos){
-        res.render("./products/editProduct", {productos:productos})
+        res.render("./products/edit", {productos:productos})
       })
     .catch(err => {
         res.send("hubo un error,intentalo mas tarde")
@@ -93,7 +81,7 @@ const productController ={
       }
       
     });
-    res.redirect("/products/detail/" + req.params.id)
+    res.redirect("/products/" + req.params.id)
 
   },
 
@@ -104,7 +92,7 @@ const productController ={
         id: req.params.id
       }
     })
-    res.redirect("/products/detail");
+    res.redirect("/products");
   },
 
 
@@ -112,7 +100,7 @@ const productController ={
     car : function(req, res, next){
       models.productos.findByPk(req.params.id)
         .then(function(productos){
-         res.render("./products/carProduct", {productos:productos})
+         res.render("./products/car", {productos:productos})
         })
         .catch(err => {
          res.send("hubo un error,intentalo mas tarde")

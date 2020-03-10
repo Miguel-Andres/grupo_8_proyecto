@@ -15,11 +15,8 @@ router.get('/create', productController.create);
 /* Post add product page. */
 router.post('/create', productController.addProduct);
 
-/* GET detail product page. */
-router.get('/detail', productController.detail);
-
-/* GET detail product id page. */
-router.get('/detail/:id', productController.detailId);
+/* GET  product id page. */
+router.get('/:id', productController.productId);
 
 /* Actualizaicon */
 router.get('/edit/:id', productController.edit);
@@ -30,7 +27,9 @@ router.post('/delete/:id', productController.delete);
 
 
 /* GET add car page. */
-router.get('/carProduct/:id', productController.car);
+router.get('/car/:id', productController.car);
+
+
   
 
 
