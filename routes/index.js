@@ -34,11 +34,6 @@ let validator = require('../middlewares/validator')
 router.post("/register", validator, userController.crear)
 
 
-
-
-
-
-
 module.exports = router;
 
 

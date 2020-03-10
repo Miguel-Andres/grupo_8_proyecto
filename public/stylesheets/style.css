@@ -210,13 +210,7 @@ ul li{
     padding: 15px;
    
 
-};
-    
-   
-    
-
-
-
+}
 /* calificacion */
 
 .rating {
@@ -271,10 +265,11 @@ ul li{
       top:2px;
       left:2px;
   }
-
+/* formulario edit*/
 #body-edit{
     justify-content: center;
     display: flex;
+    justify-items: ;
 }
   #edit{
       margin: 20px;
@@ -282,6 +277,13 @@ ul li{
       text-align: center;
       padding: 4px;
   }
+
+  #reset-pass{
+      background-color: gainsboro;
+      margin: 20px;
+      text-align: center;
+  }
+
 
 /*-------- inicio pagina de error --------------*/
 
@@ -335,3 +337,4 @@ ul li{
    
     
 }
+/*---------Fin error page------*/

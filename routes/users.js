@@ -25,7 +25,9 @@ router.post("/profile/edit",validator, userController.edit)
 
 router.delete("/delete",userController.delete)
 
-router.get("/users/profile",userController.logaout)
+
+/*------logaout*--*/
+router.get('/logout', userController.logout)
 
 // get User List
 router.get("/list" , (req,res,next) => {

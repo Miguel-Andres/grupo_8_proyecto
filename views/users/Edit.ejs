@@ -9,13 +9,16 @@
 
     </header>
 
-    <main id="body-edit"> 
+    <div id="body-edit">
+
+    <main id=""> 
 
   
     
 
-    <div class="tab-pane container col-6 "  id="edit" >
+    <div class="tab-pane container col-8 "  id="edit" >
         <form role="form " method="POST">
+            <h4> Datos de contacto</h4>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">First name</label>
                 <div class="col-lg-9">
@@ -52,18 +55,7 @@
             </div>
             
             
-            <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">Password</label>
-                <div class="col-lg-9">
-                    <input class="form-control" type="password" placeholder="Ingrese password" name="password">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
-                <div class="col-lg-9">
-                    <input class="form-control" type="password"  name="confirmpassword">
-                </div>
-            </div>
+           
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"> </label>
                 <div class="col-lg-9">
@@ -78,7 +70,30 @@
             <input type="submit" class="col-2 btn btn-danger float-right" value="delete">
         </form>
     </div>
+
+    
+</main> 
+<main class="container col-4  " id="reset-pass">
+    <form action="POST">
+        <h4> Cambio de Contraseña</h4>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Password</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="password" placeholder="Ingrese password" name="password">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="password"  name="confirmpassword">
+            </div>
+        </div>
+
+    </form>
 </main>
+
+</div>
+
 
     <footer>
         <%- include("../partials/footer") %>
