@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <%- include("../partials/head") %>
+</head>
+
+<body>
+
+  <header>
+    <%- include("../partials/header") %> 
+  </header>
+
+  <section class="container-fluid productos">
+    <div class="row">
+      <div class="col-12 tit">
+        <h2 class="titulo-pizzas">Pizzas Especiales</h2>
+      </div>
+    </div>
+    
+      <div class="row">
+        <% productos.forEach( productos => { %>
+        <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card box" >
+                <img src="<%=productos.imagen%>" class="card-img-top" alt="Foto pizza">
+                <div class="card-body">
+                <h5 class="card-title"><a href="/products/<%=productos.id%>"><%=productos.nombre%> </a></h5>
+                <p class="card-text"><%=productos.detalle%>.</p>
+                <h2>$350</h2>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Tamaño
+                  </button>
+                  <div class="dropdown-menu">
+                  <a class="dropdown-item" >Individual</a>
+                  <a class="dropdown-item" >Mediana</a>
+                  <a class="dropdown-item" >Grande</a>
+                  </div> 
+                  </div>
+                  <a href="../products/car/<%=productos.id%>"  class="btn btn-danger">Agregar   <i class="fas fa-shopping-cart"></i></a>
+                  </div>
+                  </div>   
+                </div>
+                <% }) %> 
+              </div>
+       
+  </section>  
+  
+
+
+<footer>
+<%- include("../partials/footer") %>
+</footer>
+
+           
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+</html>
