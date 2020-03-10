@@ -7,15 +7,13 @@ const models = require("../database/models")
 const productController ={
 
       products :function(req, res, next) {
-        console.log('llego a product')
-         /* models.productos.findAll()
-           .then(function(productos){
-             res.render('./products/Detail', {productos:productos})
-       })
-           .catch(err => {
-            res.send("hubo un error,intentalo mas tarde")
-         })*/
-         res.send("listado")
+        models.productos.findAll()
+          .then(function(productos){
+            res.render('./products/Detail', {productos:productos})
+          })
+          .catch(err => {
+          res.send("hubo un error,intentalo mas tarde")
+          })
   },
   
   productId : function(req, res, next){
