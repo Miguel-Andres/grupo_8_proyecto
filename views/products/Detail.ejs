@@ -18,27 +18,25 @@
     </div>
     
       <div class="row">
-        <% productos.forEach( productos => { %>
+        <% productos.forEach( producto => { %>
         <div class="col-12 col-sm-6 col-lg-3">
               <div class="card box" >
-                <img src="<%=productos.imagen%>" class="card-img-top" alt="Foto pizza">
+                <img src="<%=producto.imagen%>" class="card-img-top" alt="Foto pizza">
                 <div class="card-body">
-                <h5 class="card-title"><a href="/products/<%=productos.id%>"><%=productos.nombre%> </a></h5>
-                <p class="card-text"><%=productos.detalle%>.</p>
-                <h2>$350</h2>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Tamaño
-                  </button>
-                  <div class="dropdown-menu">
-                  <a class="dropdown-item" >Individual</a>
-                  <a class="dropdown-item" >Mediana</a>
-                  <a class="dropdown-item" >Grande</a>
+                <h5 class="card-title"><a href="/products/<%=producto.id%>"><%=producto.nombre%> </a></h5>
+                <p class="card-text"><%=producto.detalle%>.</p>
+                <h2>$<%=producto.precio_grande%></h2>
+                <div class="btn-group">   
+                  <select class="custom-select btn-primary" >
+                    <option selected>Precio...</option>
+                    <option value="precio_individual" name="<%=producto.precio_individual%>">Individual - $<%=producto.precio_individual%></option>
+                    <option value="precio_mediana" name="<%=producto.precio_mediana%>">Mediana - $<%=producto.precio_mediana%> </option>
+                    <option value="precio_grande" name="<%=producto.precio_grande%>">Grande - $<%=producto.precio_grande%></option>
+                  </select>
+                  </div>
+                  <a href="../products/car/<%=producto.id%>"  class="btn btn-danger">Agregar   <i class="fas fa-shopping-cart"></i></a>
+                  </div>
                   </div> 
-                  </div>
-                  <a href="../products/car/<%=productos.id%>"  class="btn btn-danger">Agregar   <i class="fas fa-shopping-cart"></i></a>
-                  </div>
-                  </div>   
                 </div>
                 <% }) %> 
               </div>

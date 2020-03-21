@@ -20,10 +20,10 @@ router.get('/:id', productController.productId);
 
 /* Actualizaicon */
 router.get('/edit/:id', productController.edit);
-router.post('/edit/:id', productController.update);
+router.put('/edit/:id', productController.update);
 
 /* Borrar */
-router.post('/delete/:id', productController.delete);
+router.delete('/delete/:id', productController.delete);
 
 
 /* GET add car page. */
