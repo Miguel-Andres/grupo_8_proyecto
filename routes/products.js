@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var productController = require("../controllers/productController.js")
+const multerAvatar = require ("../middlewares/multerAvatar")
 
 
 
@@ -13,7 +14,7 @@ router.get('/', productController.products);
 router.get('/create', productController.create);
 
 /* Post add product page. */
-router.post('/create', productController.addProduct);
+router.post('/create',multerAvatar, productController.addProduct);
 
 /* GET  product id page. */
 router.get('/:id', productController.productId);
@@ -37,16 +38,7 @@ router.get('/car/:id', productController.car);
 module.exports = router;
 
 
-/*
-/products/:id (GET)
-Detalle de un producto particular
-/products/:id/edit (GET)
-Formulario de edición de productos
-/products/:id (PUT)
-Acción de edición (a donde se envía el formulario):
-/products/:id (DELETE)
-Acción de borrado
-*/
+
 
 
 

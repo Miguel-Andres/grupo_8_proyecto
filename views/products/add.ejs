@@ -13,59 +13,54 @@
 <section class="  container ap ">
 
     <div class="container row wrap rt col-6">
-          <form class="formulario container-fluid" action="/products/create" method="POST">
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label >Categoria  </label>
-                      <input type="text" name="categoria" class="form-control" >
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label > Nombre</label>
-                      <input type="text" name="nombre" class="form-control" >
-                    </div>
-                  </div>
+    <form class="formulario container-fluid" action="/products/create" method="POST"  enctype="multipart/form-data">
+    <div class="form-row">
+    <div class="form-group col-md-6">
+    <label >Categoria  </label>
+    <input type="text" name="categoria" class="form-control" >
+     </div>
+      <div class="form-group col-md-6">
+      <label > Nombre</label>
+      <input type="text" name="nombre" class="form-control" >
+       </div>
+       </div>
                   
-                  <div  class="form-row ">
-                    <div class="form-group col-md-3">
-                      <label >Precio Individual</label>
-                      <input type="text" name="precio_individual" class="form-control" >
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label > Precio Mediana</label>
-                      <input type="text" name="precio_mediana" class="form-control" >
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label >Precio Grande</label>
-                      <input type="text" name="precio_grande" class="form-control" >
-                    </div>
+      <div  class="form-row ">
+      <div class="form-group col-md-3">
+      <label >Precio Individual</label>
+      <input type="text" name="precio_individual" class="form-control" >
+      </div>
+      <div class="form-group col-md-3">
+       <label > Precio Mediana</label>
+      <input type="text" name="precio_mediana" class="form-control" >
+      </div>
+      <div class="form-group col-md-3">
+     <label >Precio Grande</label>
+      <input type="text" name="precio_grande" class="form-control" >
+       </div>
 
 
 
-                  </div>
+    </div>
                   
                           
-                  <div class="form-group">
-                    <label for="inputAddress">Detalle</label>
-                    <input type="text" class="form-control" name="detalle" placeholder="">
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputCity">Producto</label>
-                      <input type="text" class="form-control"  name="producto" id="inputCity">
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-danger">Cargar Datos</button>
-                </form>
-              </div>
+    <div class="form-group">
+    <label for="inputAddress">Detalle</label>
+    <input type="text" class="form-control" name="detalle" placeholder="">
+    </div>
+    <div class="form-row">
+   <div class="form-group col-md-6">
+    <label for="inputCity">Producto</label>
+    <input type="text" class="form-control"  name="producto" id="inputCity">
+    </div>
+    </div>
+    <label >Imagen</label>
+    <input type="file" name="avatar" class="form-control-file" ><br>
+    <button type="submit" class="btn btn-danger">Cargar Datos</button>
+    </form>
+    </div>
 
-              <div class="container  row wrap col-6 carga">
-              <form action="/products/create" method="POST">
-                  <div class="form-group">
-                    <label >Imagen</label>
-                    <input type="file" name="archivo" class="form-control-file" >
-                  </div>
-                </form>
-              </div>
+    
                 
                 
     
