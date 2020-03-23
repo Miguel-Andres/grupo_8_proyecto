@@ -13,7 +13,7 @@
 <section class="  container ap ">
 
     <div class="container row wrap rt col-6">
-          <form class="formulario container-fluid" action="/products/edit/<%=productos.id%>" method="POST">
+          <form class="formulario container-fluid" action="/products/edit/<%=productos.id%>?_method=PUT" method="POST" >
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label >Categoria  </label>
@@ -45,8 +45,8 @@
                   
                           
                   <div class="form-group">
-                    <label for="inputAddress">Detalles</label>
-                    <input type="text" class="form-control" name="detalles" placeholder="" value="<%=productos.detalle%>">
+                    <label for="inputAddress">Detalle</label>
+                    <input type="text" class="form-control" name="detalle" placeholder="" value="<%=productos.detalle%>">
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
@@ -59,10 +59,10 @@
               </div>
 
               <div class="container  row wrap col-6 carga">
-              <form action="/products/create" method="POST">
+              <form action="/products/create" method="POST" enctype="multipart/form-data">
                   <div class="form-group">
                     <label >Imagen</label>
-                    <input type="file" name="archivo" class="form-control-file" >
+                    <input type="file" name="imagen" class="form-control-file" >
                   </div>
                 </form>
               </div>

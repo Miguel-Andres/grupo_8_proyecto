@@ -35,3 +35,13 @@ UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/g7ScW5Z/jamon-y-m
 UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/zFKJmrh/Provolone.jpg' WHERE (`id` = '7');
 UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/X4pBsYg/Cheddar.jpg' WHERE (`id` = '8');
 
+
+----------------------------------------------------
+23/3/20
+
+UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/WfSry4x/higos-crudo-brie.jpg' WHERE (`id` = '40');
+UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/3z0KDFg/palmitos-Fi.jpg' WHERE (`id` = '38');
+UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/6Y2p114/anchoas.jpg' WHERE (`id` = '39');
+UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/mGX759f/ananaF.jpg' WHERE (`id` = '41');
+UPDATE `baruk_db`.`productos` SET `imagen` = 'https://i.ibb.co/B6JwcCm/canchera-F.jpg' WHERE (`id` = '42');
+

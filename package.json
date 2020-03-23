@@ -26,6 +26,7 @@
   "description": "Proyecto integrador",
   "main": "app.js",
   "devDependencies": {
+    "nodemon": "^2.0.2",
     "sequelize-cli": "^5.5.1"
   },
   "repository": {

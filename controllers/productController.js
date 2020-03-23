@@ -45,7 +45,9 @@ const productController ={
           precio_grande: req.body.precio_grande,
           detalle: req.body.detalle,
           producto: req.body.producto,
-          categoria:req.body.categoria,
+          categoria: req.body.categoria,
+          
+          
         })
             
              res.redirect("/products")
