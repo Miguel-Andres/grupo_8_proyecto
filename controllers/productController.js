@@ -9,11 +9,9 @@ const productController ={
       products :function(req, res, next) {
         models.productos.findAll()
           .then(function(productos){
-            res.render('./products/Detail', {productos:productos})
+            return res.render('./products/Detail', {productos:productos})
           })
-          .catch(err => {
-          res.send("hubo un error,intentalo mas tarde")
-          })
+          .catch(err => res.send("hubo un error,intentalo mas tarde"))
   },
   
   productId : function(req, res, next){

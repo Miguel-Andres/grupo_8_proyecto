@@ -9,17 +9,20 @@
 
     </header>
 
-    <div id="body-edit">
+    
 
-    <main id=""> 
+    <div class="container" id="body-edit">
+
+    
 
   
     
 
-    <div class="tab-pane container col-8 "  id="edit" >
+    <div class=" container col-6 "  id="edit" >
         <form role="form " method="POST">
             <h4> Datos de contacto</h4>
-            <div class="form-group row">
+            <div class="form-group row ">
+                
                 <label class="col-lg-3 col-form-label form-control-label">First name</label>
                 <div class="col-lg-9">
                     <input class="form-control" type="text" value="<%= user.nombre%>" name="name">
@@ -40,13 +43,13 @@
             
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">direccion</label>
-                <div class="col-lg-9">
+                <div class="col-lg-6">
                     <input class="form-control" type="text" value="<%= user.direccion%>" placeholder="direccion" name="direccion">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <input class="form-control" type="text" value="<%= user.pais%>" placeholder="pais" name="pais">
                 </div>
                 <div class="col-lg-3">
@@ -63,36 +66,40 @@
                     <input method="post" type="submit" class="btn btn-primary" value="Save Changes">
                 </div>
             </div>
+            <form class="delete"method="POST" action="/users/delete?_method=DELETE">
+                <input type="submit" class="col-2 btn btn-danger float-right" value="delete">
+            </form>
         </form>
 
         
-        <form method="POST" action="/users/delete?_method=DELETE">
-            <input type="submit" class="col-2 btn btn-danger float-right" value="delete">
-        </form>
+        
     </div>
 
     
 </main> 
-<main class="container col-4  " id="reset-pass">
-    <form action="POST">
+<div class="col-6  container" id="reset-pass">
+    <form action="POST" role="form ">
         <h4> Cambio de Contraseña</h4>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label">Password</label>
-            <div class="col-lg-9">
+            <div class="col-lg-6">
                 <input class="form-control" type="password" placeholder="Ingrese password" name="password">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
-            <div class="col-lg-9">
+            <div class="col-lg-6">
                 <input class="form-control" type="password"  name="confirmpassword">
             </div>
         </div>
 
     </form>
-</main>
+</div>
+
 
 </div>
+
+
 
 
     <footer>

@@ -13,6 +13,7 @@ const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(res.locals);
   res.render('index');
 });
 

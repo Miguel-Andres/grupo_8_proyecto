@@ -63,6 +63,7 @@ const userController = {
                     req.session.user = user
 
                     // creamos usuarios en locals
+                    
                     // req.locals.user = req.session.user
                     
                     return res.redirect("/users/profile" )

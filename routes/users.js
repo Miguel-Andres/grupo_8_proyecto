@@ -5,7 +5,7 @@ const path = require("path")
 var userController = require("../controllers/userController.js")
 const multerAvatar = require ("../middlewares/multerAvatar")
 let validator = require('../middlewares/validator')
-
+let userRouter = require("../middlewares/userRouter")
 const models = require("../database/models")
 
 
@@ -13,7 +13,7 @@ const models = require("../database/models")
 
 
 /* GET && POST users listing. */
-router.get('/profile',  userController.profile  )
+router.get('/profile', userRouter, userController.profile  )
 
 router.post("/profile", multerAvatar , userController.profile )
 
