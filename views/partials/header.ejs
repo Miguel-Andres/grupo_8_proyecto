@@ -1,109 +1,102 @@
-<div class="container  col-12 col-sm-0 ">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark">
 
-    <div class="logo row ">
+  <a class="navbar-brand logo" href="/">
+    <img src="https://i.ibb.co/VC2xwhf/logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
+    Baruk
+    </a>
 
-    <div class="logo crow">
-      <img src="https://i.ibb.co/VC2xwhf/logo.jpg" width="100px" alt="logo"   >
-    </div>
-
-    <div class="boton-usuario col">
-    
-      <div class="dropdown">
-        <button class="btn btn-danger dropdown-toggle" type="button" 
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user"></i>
-        </button>
-        <div class="dropdown-menu">
-
-          
-          <!-- FORMULARIO EJS --> 
-          
-          <form class="px-4 py-3" method="POST" action ="/">
-            <div class="form-group">
-              <label >Email address</label>
-              <input type="email" class="form-control" 
-                placeholder="email@example.com" name="email">
-            </div>
-            <div class="form-group">
-              <label >Password</label>
-              <input type="password" class="form-control"  placeholder="Password" name="password">
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input"  name="remember" >
-                <label class="form-check-label" for="dropdownCheck">
-                  Recuerdame
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </form>
-
-          <!-- /* FORMULARIO EJS */ --> 
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/register">New around here? Sign up</a>
-          <a class="dropdown-item" href="/register">Forgot password?</a>
-        </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse gula" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="/products">Menu </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="">Locales</a>
+    </li>
+    <li class="nav-item dropdown active">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      contactanos
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#">Acerca De</a>
+      <a class="dropdown-item" href="">contacto</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Trabaja con Nosotros</a>
       </div>
+    </li>
+    
+    </ul>
+    <form class="form-inline my-2 my-lg-0 navbar-nav">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+       <i class="fas fa-search" style="color: black;" ></i>
+    </button>
+    </form>
+
+  <!--boton usuario-->
+
+    <div class=" my-2 my-lg-0">
+
+    <div class="dropdown navbar-nav">
+      <button class="btn btn-danger dropdown-toggle" type="button" 
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      
+       <i class="fas fa-user"></i> inicia session
+      
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
   
       
+      <!-- FORMULARIO login --> 
+      
+      <form class="px-4 py-3" method="POST" action ="/">
+        <div class="form-group">
+        <label >Email address</label>
+        <input type="email" class="form-control" 
+          placeholder="email@example.com" name="email">
+        </div>
+        <div class="form-group">
+        <label >Password</label>
+        <input type="password" class="form-control"  placeholder="Password" name="password">
+        </div>
+        <div class="form-group">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input"  name="remember" >
+          <label class="form-check-label" for="dropdownCheck">
+          Recuerdame
+          </label>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+  
+       
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="/register">New around here? Sign up</a>
+      <a class="dropdown-item" href="/register">Forgot password?</a>
+      </div>
+    </div>
+     <!-- /* FORMULARIO login */ --> 
+  
+     
   
   
     </div>
+  <!-- fin boton usuario-->
 
-    <div class="carro row " >
-      <a href="/carproduct">
-      <button type="button"  class="btn btn-primary btn-sm" ><i class="fas fa-shopping-cart"></i></button> 
-      </a>
+   
+    <div class="car">
+      <a class="navbar-nav"><i class="fas fa-shopping-cart fa-2x"></i> </a>
       </div>
+ 
+      
   </div>
 
-  
-    
-            
-
-    <div class="container-abajo">
 
 
-      <div class="botones">
 
-        <ul class="nav nav-tabs ">
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active btn-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">Menu</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="/products">Especiales</a>
-              <a class="dropdown-item" href="/products">Clasicas</a>                  
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Ofertas</a>
-            </div>
-          </li>
-          
-          <li class="nav-item">
-
-            <a class="nav-link" href="#">Eventos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Locales</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Ofertas Del dia</a>
- </li>
-        </ul> 
-      </div>
-      <%/*comente*/%>
-      <div class="buscador">
-        <form action="" method="get" class="search-form">
-          <input type="text" name="search" placeholder="Buscar productos" class="search-form_input">
-
-          <button type="submit" class="search-form_button"><i class="fas fa-search" style="color: black;" ></i></button>
-
-
-        </form>
-      </div>
-
-
-    </div>
-
-  </div>
+  </nav>
