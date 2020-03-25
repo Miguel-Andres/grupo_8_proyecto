@@ -88,7 +88,7 @@ const userController = {
        
 
 
-    profile : function (req,res,next){
+    profile : function (req,res){
         console.log('sesion', req.session)
 
         res.render( "users/profile", {
@@ -96,12 +96,12 @@ const userController = {
         } )
     } ,
 
-    profileEdit : (req,res,next)=>{
+    profileEdit : (req,res)=>{
 
         res.render("users/Edit")
     },
 
-    edit:(req,res,next)=>{
+    edit:(req,res)=>{
         console.log('session', req.session.user)
 
         db.user.update({
@@ -116,7 +116,7 @@ const userController = {
               id: req.session.user.id,
             }
           })
-          let user =req.session.user
+          let user = req.session.user
         
           res.redirect("/users/profile" ,{user :user})
         },
