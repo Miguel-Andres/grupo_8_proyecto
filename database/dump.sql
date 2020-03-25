@@ -11,11 +11,39 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+
+-- Volcando estructura de base de datos para baruk_db
+CREATE DATABASE IF NOT EXISTS `baruk_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `baruk_db`;
+
+-- Volcando estructura para tabla baruk_db.avatars
+CREATE TABLE IF NOT EXISTS `avatars` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+
 -- Volcando datos para la tabla baruk_db.avatars: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `avatars` DISABLE KEYS */;
 /*!40000 ALTER TABLE `avatars` ENABLE KEYS */;
 
--- Volcando datos para la tabla baruk_db.clientes: ~3 rows (aproximadamente)
+-- Volcando estructura para tabla baruk_db.clientes
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(200) DEFAULT NULL,
+  `apellido` varchar(200) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `password` varchar(200) DEFAULT NULL,
+  `pais` varchar(200) DEFAULT NULL,
+  `ciudad` varchar(200) DEFAULT NULL,
+  `direccion` varchar(200) DEFAULT NULL,
+  `avatar_id` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla baruk_db.clientes: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
 INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `email`, `password`, `pais`, `ciudad`, `direccion`, `avatar_id`, `created_at`, `updated_at`) VALUES
 	(19, 'tomas', 'tomas', 'tomaspeld@gmail.com', '$2b$04$41V2l4MsYhwfyMtQLNUS7ejZKkAzu9Kn0tuXVT', NULL, NULL, NULL, NULL, '2020-03-03 15:52:03', '2020-03-03 15:52:03'),
@@ -24,6 +52,20 @@ INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `email`, `password`, `pais`,
 	(22, 'a', 'a', 'a@a.com', '$2b$04$vkFrShy2ca61BrZywVkxReyLowsH3UhVUY7mKeOApbpqiTs5YDoGq', NULL, NULL, NULL, NULL, '2020-03-10 16:46:06', '2020-03-10 16:46:06'),
 	(23, 'tomas', 'pel', 'pachu@pachu.com', '$2b$04$O0QdycWquSD4M.nnpVNqCu1vqDe8qfFFtVsTZnkrITkb3d6Mh1h1.', NULL, NULL, NULL, NULL, '2020-03-21 21:45:14', '2020-03-21 21:45:14');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+
+-- Volcando estructura para tabla baruk_db.productos
+CREATE TABLE IF NOT EXISTS `productos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(200) NOT NULL,
+  `categoria` varchar(200) NOT NULL,
+  `precio_individual` int(11) NOT NULL,
+  `precio_mediana` int(11) NOT NULL,
+  `precio_grande` int(11) NOT NULL,
+  `detalle` longtext NOT NULL,
+  `producto` varchar(200) NOT NULL,
+  `imagen` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla baruk_db.productos: ~18 rows (aproximadamente)
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
@@ -47,6 +89,14 @@ INSERT INTO `productos` (`id`, `nombre`, `categoria`, `precio_individual`, `prec
 	(42, 'Canchera', 'clasica', 200, 300, 500, 'Salsa de tomate ', 'pizza', 'https://i.ibb.co/B6JwcCm/canchera-F.jpg'),
 	(65, 'Coliflor', 'especial', 300, 400, 600, 'Salsa de tomate, muzzarella y coliflor', 'pizza', '');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
+
+-- Volcando estructura para tabla baruk_db.ventas
+CREATE TABLE IF NOT EXISTS `ventas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `producto_id` int(11) DEFAULT NULL,
+  `cliente_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla baruk_db.ventas: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `ventas` DISABLE KEYS */;

@@ -10,36 +10,36 @@
     <%- include("../partials/header") %> 
   </header>
 
-  <section class="container-fluid productos">
-    <div class="row">
-      <div class="col-12 tit">
-        <h2 class="titulo-pizzas">Pizzas Especiales</h2>
-      </div>
-    </div>
+<section class="container-fluid productos">
+<div class="row">
+<div class="col-12 tit">
+ <h2 class="titulo-pizzas">Pizzas Especiales</h2>
+ </div>
+ </div>
     
-      <div class="row">
-        <% productos.forEach( producto => { %>
-        <div class="col-12 col-sm-6 col-lg-3">
-              <div class="card box" >
-                <img src="<%=producto.imagen%>" style="max-block-size:230px;" class="card-img-top" alt="Foto pizza">
-                <div class="card-body">
-                <h5 class="card-title"><a href="/products/<%=producto.id%>"><%=producto.nombre%> </a></h5>
-                <p class="card-text" style="min-block-size: 50px;"><%=producto.detalle%>.</p>
-                <h2>$<%=producto.precio_grande%></h2>
-                <div class="btn-group">   
-                  <select class="custom-select btn-primary" >
-                    <option selected>Precio...</option>
-                    <option value="precio_individual" name="<%=producto.precio_individual%>">Individual - $<%=producto.precio_individual%></option>
-                    <option value="precio_mediana" name="<%=producto.precio_mediana%>">Mediana - $<%=producto.precio_mediana%> </option>
-                    <option value="precio_grande" name="<%=producto.precio_grande%>">Grande - $<%=producto.precio_grande%></option>
-                  </select>
-                  </div>
-                  <a href="../products/car/<%=producto.id%>"  class="btn btn-danger">Agregar   <i class="fas fa-shopping-cart"></i></a>
-                  </div>
-                  </div> 
-                </div>
-                <% }) %> 
-              </div>
+  <div class="row">
+  <% productos.forEach( producto => { %>
+  <div class="col-12 col-sm-6 col-lg-3">
+  <div class="card box" >
+  <img src="<%=producto.imagen%>" style="max-block-size:230px;" class="card-img-top" alt="Foto pizza">
+  <div class="card-body">
+  <h5 class="card-title"><a href="/products/<%=producto.id%>"><%=producto.nombre%> </a></h5>
+  <p class="card-text" style="min-block-size: 50px;"><%=producto.detalle%>.</p>
+  <h2>$<%=producto.precio_grande%></h2>
+  <div class="btn-group">   
+  <select class="custom-select btn-primary" >
+  <option selected>Precio...</option>
+  <option value="precio_individual" name="<%=producto.precio_individual%>">Individual - $<%=producto.precio_individual%></option>
+  <option value="precio_mediana" name="<%=producto.precio_mediana%>">Mediana - $<%=producto.precio_mediana%> </option>
+  <option value="precio_grande" name="<%=producto.precio_grande%>">Grande - $<%=producto.precio_grande%></option>
+  </select>
+  </div>
+  <a href="../products/car/<%=producto.id%>"  class="btn btn-danger">Agregar   <i class="fas fa-shopping-cart"></i></a>
+  </div>
+  </div> 
+  </div>
+  <% }) %> 
+  </div>
        
   </section>  
   

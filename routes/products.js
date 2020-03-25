@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var productController = require("../controllers/productController.js")
 const multerAvatar = require ("../middlewares/multerAvatar")
+var { check, validationResult, body } = require('express-validator')
+const productsValidator = require ("../middlewares/productsValidator")
 
 
 
@@ -14,14 +16,14 @@ router.get('/', productController.products);
 router.get('/create', productController.create);
 
 /* Post add product page. */
-router.post('/create',multerAvatar, productController.addProduct);
+router.post('/create', multerAvatar, productsValidator, productController.addProduct);
 
 /* GET  product id page. */
 router.get('/:id', productController.productId);
 
 /* Actualizaicon */
 router.get('/edit/:id', productController.edit);
-router.put('/edit/:id', productController.update);
+router.put('/edit/:id', productsValidator, productController.update);
 
 /* Borrar */
 router.delete('/delete/:id', productController.delete);
