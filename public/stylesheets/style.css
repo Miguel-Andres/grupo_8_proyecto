@@ -266,7 +266,7 @@ ul li {
     justify-content: center;
 
 }
-.card{
+.card-edit{
     margin :2px;
     background:linear-gradient(30deg, tomato,gold, gainsboro, tomato, red);
     border-radius: 182px 0px 2px 10px;
