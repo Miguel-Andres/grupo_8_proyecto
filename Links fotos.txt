@@ -50,3 +50,6 @@ Link Fotos pizzas Product
 icono user
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/Htm5ZXY/Barukicon.jpg" alt="Barukicon" border="0"></a>
+
+error 404
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/y8hdkQ6/images1.jpg" alt="images1" border="0"></a>

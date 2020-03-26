@@ -37,9 +37,7 @@
     
     .vista-ampliada {
         
-       position: relative;
-      
-       display: inline-block ;
+       display: flex;     
         justify-content: space-around;
     }
 }
@@ -303,7 +301,7 @@ ul li {
     letter-spacing: 70px;
     font-size: 150px;
     margin: 30px;
-    background: url(../images/images1.jpg) center;
+    background: url("https://i.ibb.co/y8hdkQ6/images1.jpg") center;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 
