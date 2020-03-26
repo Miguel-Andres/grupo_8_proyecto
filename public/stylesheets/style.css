@@ -6,58 +6,23 @@
 
 
 /* inicio nav bar user profile*/
-.header-profile {
-    display: flex;
-    background-color: gainsboro;
-    justify-content: space-between;
-}
-
-#logo-profile {
-    align-self: center;
-    margin-left: 40px;
-
-}
-
-.nav-profile {
-
-    display: flex;
-
-}
-
-.ul-profile {
-
-    display: flex;
-    margin: 3px;
-
-    list-style-type: none;
-}
-
 .li-profile {
     margin: 25px;
-    font-family: 'Trade Winds';
-    color: black;
-
-    align-self: flex-end;
-
-
+    list-style-type: none;
 }
-
-.hr {
-    display: block;
-    unicode-bidi: isolate;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    overflow: hidden;
-    border-style: inset;
-    border-width: 1px;
+.barra{
+    background-color:gainsboro
 }
-
+#logo-profile {
+   
+  margin-left: 40px;
+}
 .avatar-profile {
     border: none;
     border-radius: 30%
 }
+
+/* fin nav bar user profile*/
 
 /* inicio nav bar */
 
@@ -65,11 +30,16 @@
 .car-mobile {
     display: flex;
     justify-content: center;
+
 }
 
 @media (min-width: 992px) {
+    
     .vista-ampliada {
-        display: flex;
+        
+       position: relative;
+      
+       display: inline-block ;
         justify-content: space-around;
     }
 }
@@ -150,7 +120,7 @@ body {
 .prueba {
     background-color: rgb(230, 225, 225);
     margin: 15px;
-    ;
+    
 }
 
 /*carrito body*/
