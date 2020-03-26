@@ -14,7 +14,18 @@
 
     <div class="container row wrap rt col-6">
           <form class="formulario container-fluid" action="/products/edit/<%=productos.id%>?_method=PUT" method="POST" >
-                  <div class="form-row">
+            <% if (typeof errors != "undefined")  { %>
+              <p style="color:red"></p>
+              <ul>
+                <% for (let i = 0; i < errors.length; i++) { %>
+                  <li>
+                    <%= errors[i].msg %>
+                  </li>
+                  <% } %>
+              </ul>
+              <% } %>
+                    
+            <div class="form-row">
                     <div class="form-group col-md-6">
                       <label >Categoria  </label>
                       <input type="text" name="categoria" class="form-control" value="<%=productos.categoria%>">
@@ -54,16 +65,9 @@
                       <input type="text" class="form-control"  name="producto" id="inputCity" value="<%=productos.producto%>">
                     </div>
                   </div>
+                  <label >Imagen</label>
+                  <input type="file" name="avatar" class="form-control-file" ><br>
                   <button type="submit" class="btn btn-danger">Editar</button>
-                </form>
-              </div>
-
-              <div class="container  row wrap col-6 carga">
-              <form action="/products/create" method="POST" enctype="multipart/form-data">
-                  <div class="form-group">
-                    <label >Imagen</label>
-                    <input type="file" name="imagen" class="form-control-file" >
-                  </div>
                 </form>
               </div>
                 

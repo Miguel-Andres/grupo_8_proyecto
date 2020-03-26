@@ -2,6 +2,7 @@ const fs = require("fs") ;
 const path = require ("path")
 const productDatabase = path.join(__dirname , '../data/product.json')
 const models = require("../database/models")
+var { chek, validationResult, body } = require('express-validator')
 
 
 const productController ={
@@ -37,7 +38,11 @@ const productController ={
       },
 
 
-      addProduct: function(req, res, next){            
+      addProduct: function(req, res, next){     
+        let errors = validationResult(req);
+        
+         if (errors.isEmpty()) {
+
         models.productos.create({
           nombre: req.body.nombre,
           precio_individual: req.body.precio_individual,
@@ -45,15 +50,17 @@ const productController ={
           precio_grande: req.body.precio_grande,
           detalle: req.body.detalle,
           producto: req.body.producto,
-          categoria: req.body.categoria,
-          
-          
-        })
-            
+          categoria: req.body.categoria,         
+        })    
              res.redirect("/products")
-  },
 
-      
+      } else {
+       return res.render("./products/add", {errors: errors.errors})
+      }
+  },
+       
+
+
      edit: function(req, res, next){
       models.productos.findByPk(req.params.id)
       .then(function(productos){
@@ -66,6 +73,11 @@ const productController ={
 
 
   update: function(req, res, next){
+   /* let errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+      */
+
     models.productos.update({
       nombre: req.body.nombre,
       precio_individual: req.body.precio_individual,
@@ -82,8 +94,15 @@ const productController ={
       
     });
     res.redirect("/products/" + req.params.id)
-
   },
+
+    /*
+  } else {
+    return res.render("./products/edit/" + req.params.id, {errors: errors.errors})
+   }
+},
+*/
+  
 
 
   delete: function(req, res, next){
