@@ -7,18 +7,16 @@ const sequelize = require("sequelize")
 
 
 module.exports = [
-    check("email", "ingrese un email valido" ).isEmail(),
-    /*.custom(value => {
-      db.user.email.findAll(value)
-      .then( value =>{ 
-      if(value == db.user.email){
-        return false
-      }{
-        return true ;
-      }
-      })
-
-    }).withMessage("usuario ya existente"),*/
+    check("email", "ingrese un email valido" ).isEmail()
+    .custom((value,{ req }) => {
+      return db.user.findOne({
+        where : {email:req.body.email}
+    }).then(user => {
+        if (user) {
+          return Promise.reject('El email esta en uso');
+        }
+      });
+    }),
     check("name", "nombre invalido").isLength({min:1}),
     check("lastName" ,"Apellido invalido").isLength({min:1}),
     check("password","ingrese clave valida" ).isLength({min:3}).custom((value,{req, loc, path}) => {
