@@ -20,7 +20,7 @@ const userController = {
     crear: function(req,res,next){
         let errors = validationResult(req)
 
-        console.log('errores de validacion', errors)
+        console.log( errors)
 
         if(errors.isEmpty()){
             db.user.create({
@@ -89,7 +89,7 @@ const userController = {
 
 
     profile : function (req,res){
-        console.log('sesion', req.session)
+        /*console.log('sesion', req.session)*/
 
         res.render( "users/profile", {
             user: req.session.user
@@ -102,32 +102,71 @@ const userController = {
     },
 
     edit:(req,res)=>{
-        console.log('session', req.session.user)
+        /*console.log('session', req.session.user)*/
 
-        db.user.update({
-            nombre: req.body.name,
-            apellido :req.body.lastName,
-            pais : req.body.pais ,
-            ciudad : req.body.ciudad ,
-            direccion :req .body.direccion ,
-            //password : bcrypt.hashSync(req.body.password,2),
-         },{
-            where:{
-              id: req.session.user.id,
-            }
-          })
-          let user = req.session.user
+        let errorsEdit = validationResult(req)
+        console.log('Problemas al actualizar datos', errorsEdit)
+
+        if(errorsEdit.isEmpty()){
+
+            db.user.update({
+                nombre: req.body.name,
+                apellido :req.body.lastName,
+                pais : req.body.pais ,
+                ciudad : req.body.ciudad ,
+                direccion :req .body.direccion ,
+                
+             },{
+                where:{
+                  id: req.session.user.id,
+                }
+            })
+              
+            
+             return res.redirect("/users/profile")
+
+        }{
+            return res.render("users/edit" , {errors: errorsEdit.errors})
+        }
+
         
-          res.redirect("/users/profile" ,{user :user})
+        },
+
+        editPass:(req,res)=>{
+            console.log( "Actualizo pass el cliente : " , req.session.user.id)
+
+            let errors = validationResult(req)
+            console.log('errores de validacion', errors)
+
+            if(!errors.isEmpty()){
+
+                return res.render("users/edit" , {errors : errors.errors})
+
+            }else{
+                db.user.update({
+                    password : bcrypt.hashSync(req.body.password,2)
+                    },{
+                        where : { id : req.session.user.id} 
+                    })
+                    
+        
+                   return res.redirect("/users/profile")
+
+            }
+
+
+           
+
         },
 
         delete: (req,res,next)=>{
+            
             db.user.destroy({
                where :{
-                   id : req.session.id
+                   id : req.session.user.id
                }
             })
-            res.redirect("/", {msg: "el usuario fue borrado"})
+            res.redirect("/")
 
         },
     

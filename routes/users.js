@@ -4,9 +4,11 @@ const multer = require("multer");
 const path = require("path")
 var userController = require("../controllers/userController.js")
 const multerAvatar = require ("../middlewares/multerAvatar")
-let validator = require('../middlewares/validator')
+
 let userRouter = require("../middlewares/userRouter")
 const models = require("../database/models")
+let validatorPass = require("../middlewares/validatorPass")
+let validatorEdit = require("../middlewares/validatorEdit")
 
 
 
@@ -21,9 +23,13 @@ router.post("/profile", multerAvatar , userController.profile )
 
 router.get("/profile/edit" ,userController.profileEdit ) 
 
-router.post("/profile/edit",validator, userController.edit)
+router.post("/profile/editdata",validatorEdit, userController.edit)
 
-router.delete("/delete",userController.delete)
+
+
+router.put("/profile/editpass",validatorPass,userController.editPass)
+
+router.delete("/profile/delete",userController.delete)
 
 
 /*------logaout*--*/
