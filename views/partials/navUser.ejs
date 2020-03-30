@@ -1,27 +1,33 @@
-<div id="logo-profile"  >
- <a href="/users/profile"> <img  src="https://i.ibb.co/Htm5ZXY/Barukicon.jpg" alt="Barukicon"  width="90" > </a>
-</div>
 
-<nav class="nav-profile"> 
-  
-  <ul class="ul-profile">
-  
-  <li class="li-profile">
-     <%= user.nombre %>
-  </li>
-  
-  
-  <li class="li-profile">
-  <a ><img class ="avatar-profile" src="../public/avatar/Homero.png" width="45" ></a>
-</li>
-<hr>
 
-<li  class="li-profile">
-  <a style="text-decoration: none; color: black;"  href="/users/logout"><i class="fas fa-sign-out-alt" ></i> logout </a>
-</li>
-</ul>
+
+<nav class="navbar navbar-expand-lg navbar-light  barra">
+  <a  href="/"> <img  id="logo-profile" src="https://i.ibb.co/Htm5ZXY/Barukicon.jpg" alt="Barukicon"  width="90" ></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto barra">
+      
+      
+      
+      
+         
+      
+    </ul>
+    
+    <li class="li-profile">
+      <%= user.nombre %>
+   </li>
+    <li class="li-profile">
+      <a ><img class ="avatar-profile" src="../public/avatar/Homero.png" width="45" ></a>
+   </li>
+   
+    <li  class="li-profile">
+      <a style="text-decoration: none; color: black;"  href="/users/logout"><i class="fas fa-sign-out-alt" ></i> logout </a>
+    </li>
+    
+  
+  </div>
 </nav>
-
-
-
 

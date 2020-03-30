@@ -6,10 +6,14 @@
 <body>
     <header class="header-profile">
         <%- include("../partials/navUser") %>
-
+        
     </header>
+                                        
+                
+    
 
-    <div class="form-edit ">    
+    <div class="form-edit ">   
+         
 
 
         <div class="accordion" id="accordionExample">
@@ -17,7 +21,7 @@
         <div class="card card-edit">
           <div class="card-header" id="headingOne">
             <h2 class="mb-0">
-              <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
              Editar Datos de contacto 
               </button>
             </h2>
@@ -27,7 +31,7 @@
             <div class="card-body">
                 <!--Formulario-->
                 <div class=" container col-8 "  id="edit" >
-                    <form role="form " method="POST">
+                    <form role="form " method="POST" action="/users/profile/editdata">
                         <h4  class="Titulo-edit"> Datos de contacto</h4>
                         <div class="form-group row ">
                             
@@ -51,8 +55,19 @@
                         
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">direccion</label>
+                            
                             <div class="col-lg-6">
                                 <input class="form-control" type="text" value="<%= user.direccion%>" placeholder="direccion" name="direccion">
+                                <% if (typeof errors != "undefined") { %>
+                                    <ul>
+    
+                                        <% for(let i = 0 ; i<errors.length ; i++) { %> 
+                                         <li> <%= errors[i].msg  %>  <%= errors[i].param  %>  </li>
+                                         
+                                         
+                                        <% } %>               
+                                    </ul>
+                                   <% } %>  
                             </div>
                         </div>
                         <div class="form-group row">
@@ -94,8 +109,8 @@
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Cambiar Contraseña
-              </button>
+                Cambiar Contraseña                
+                </button>
             </h2>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -103,13 +118,25 @@
                 <!--Formulario-->
 
                 <div class="col-6  container" id="reset-pass">
-                    <form action="POST" role="form ">
+                    <form  role="form " action="/users/profile/editpass?_method=PUT" method="POST"> 
                         <h4 class="Titulo-edit"> Cambio de Contraseña</h4>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Password</label>
                             <div class="col-lg-6">
                                 <input class="form-control" type="password" placeholder="Ingrese password" name="password">
+                                <% if (typeof errors != "undefined") { %>
+                                    <ul>
+                                        <% for(let i = 0 ; i<errors.length ; i++) { %> 
+                                         <li> <%= errors[i].msg %> </li>
+                                        <% } %>               
+                                    </ul>
+                                   <% } %>  
                             </div>
+                            
+                           
+                                      
+                               
+                               
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Confirme password</label>
@@ -122,7 +149,7 @@
                             
                             <div class="col-lg-9">
                                 <input type="reset" class="btn btn-danger" value="Cancel">
-                                <input method="POST" type="submit" class="btn btn-success" value="Save Changes">
+                                <input type="submit" class="btn btn-success" value="Save Changes">
                             </div>
                         </div>
 
@@ -147,9 +174,9 @@
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
-                <!--delete for-->
+                <!--delete form-->
                 
-                <form class="delete" method="POST" action="/users/delete?_method=DELETE">
+                <form class="delete" method="POST" action="/users/profile/delete?_method=DELETE" role="form">
                     <div class="alert alert-danger" role="alert">
                         ¡Estas Seguro de eliminar tu cuenta !
                         
@@ -170,7 +197,7 @@
     
  
 
-
+   
 
 
     <!--footer-->
