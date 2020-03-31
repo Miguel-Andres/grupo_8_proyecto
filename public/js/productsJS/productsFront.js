@@ -1,10 +1,14 @@
-let title = document.querySelector("h2");
-title.innerHTML += " <i>Pachu</i>"
+window.addEventListener("load", function(){
+    let select =  document.querySelector("select.precio")
+   
+    select.addEventListener ("click", function(){ 
+     
+        let precioInd = document.querySelector("option.individual");
+        let valor = document.querySelector("option.individual value")
+        if (precioInd.value == valor) {
+            alert("pachu")
+        }
 
-title.style.color =  "crimson"
 
-console.log(title)
-
-let header = document.querySelector("")
-
-header.classList.add
+    })
+})

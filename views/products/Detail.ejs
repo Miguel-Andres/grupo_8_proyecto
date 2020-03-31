@@ -8,6 +8,7 @@
 
   <header>
     <%- include("../partials/header") %> 
+    <script src="../js/productsJS/productsFront.js"></script>
   </header>
 
 <section class="container-fluid productos">
@@ -27,11 +28,11 @@
   <p class="card-text" style="min-block-size: 50px;"><%=producto.detalle%>.</p>
   <h2>$<%=producto.precio_grande%></h2>
   <div class="btn-group">   
-  <select class="custom-select btn-primary" >
+  <select class="custom-select btn-primary precio" >
   <option selected>Precio...</option>
-  <option value="precio_individual" name="<%=producto.precio_individual%>">Individual - $<%=producto.precio_individual%></option>
-  <option value="precio_mediana" name="<%=producto.precio_mediana%>">Mediana - $<%=producto.precio_mediana%> </option>
-  <option value="precio_grande" name="<%=producto.precio_grande%>">Grande - $<%=producto.precio_grande%></option>
+  <option value="precio_individual " class="individual" name="<%=producto.precio_individual%>">Individual - $<%=producto.precio_individual%></option>
+  <option value="precio_mediana " class="mediana" name="<%=producto.precio_mediana%>">Mediana - $<%=producto.precio_mediana%> </option>
+  <option value="precio_grande" class="grande" name="<%=producto.precio_grande%>">Grande - $<%=producto.precio_grande%></option>
   </select>
   </div>
   <a href="../products/car/<%=producto.id%>"  class="btn btn-danger">Agregar   <i class="fas fa-shopping-cart"></i></a>
