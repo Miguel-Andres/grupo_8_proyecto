@@ -38,7 +38,6 @@ module.exports = function (sequelize ,dataTypes){
     let avatar = sequelize.define(alias,cols,{
 
         tableName : "avatars" ,
-
         timestamps : false ,
   
         

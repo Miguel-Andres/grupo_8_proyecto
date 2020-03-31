@@ -4,6 +4,7 @@ const sequelize = require("sequelize")
 const usuariosDatabase = path.join(__dirname , '../data/usuarios.json')
 const {check ,validationResult, body}= require("express-validator")
 const bcrypt = require("bcrypt")
+const crypto = require("crypto")
 const db = require("../database/models")
 
 
@@ -64,10 +65,19 @@ const userController = {
 
                     // creamos usuarios en locals
                     
-                    // req.locals.user = req.session.user
-                    
+                   // req.locals.user = req.session.user
+
+                   if (req.body.remember){
+                       const token = crypto.randomBytes(64).toString("base64")
+                       res.cookie("rememberToken",token,{maxAge :1000*60*60*24*90})
+                       db.token.create({
+                           cliente_id: user.id ,
+                           token : token
+                       })
+
+                   }
                     return res.redirect("/users/profile" )
-                } else {
+                    } else {
                     res.send("No existe la contraseña")
                 }
             } else {
