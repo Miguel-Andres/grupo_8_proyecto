@@ -2,7 +2,7 @@
 <html>
   <head>
       <%- include("../partials/head") %>
-    
+      
     </head>
     <body>
       <header class="container-fluid  col-12 col-sm-0">
@@ -17,30 +17,36 @@
 
       <div class=" row ">
 
-            <form class=" container-fluid" method="POST">
+            <form class=" container-fluid" method="POST" id="registerForm">
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label >Email</label>
                         <input type="email" class="form-control" name="email" >
+                        <p class="invalid-feedback"></p>
                       </div>
                       <div class="form-group col-md-3">
                         <label >Contraseña</label>
                         <input type="password" class="form-control" name = "password" >
+                        <p class="invalid-feedback"></p>
                       </div>
                       <div class="form-group col-md-3">
                         <label   >Repetir Contraseña</label>
                         <input type="password" class="form-control"  name = "confirmpassword">
+                        <p class="invalid-feedback"></p>
                       </div>
                     </div>
                     
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label >Nombre</label>
-                                <input name="name" type="text" class="form-control" value="" >
+                                <input name="name" type="text" class="form-control " value="" >
+                                  <p class="invalid-feedback"></p>
                               </div>
                               <div class="form-group col-md-6">
                                 <label >Apellido</label>
                                 <input type="text" name = "lastName" class="form-control" >
+                                <p class="invalid-feedback"></p>
+
                               </div>
                             </div>
                     
@@ -79,7 +85,7 @@
       <%- include("../partials/footer") %> 
     
   
-
-  
+<script  type = "text/javascript"  src = "../js/validator.min.js" > </script>
+<script src="../js/user/crear.js"> </script>
 </body>
 </html>
