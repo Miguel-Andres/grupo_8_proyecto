@@ -3,7 +3,7 @@
 
 <head>
  <%- include("../partials/head") %>
-
+ <script src="../js/productsJS/detailid.js"></script>
 </head>
 
 <body >
@@ -38,7 +38,7 @@
                 <h2>$<%=productos.precio_grande%></h2>
                 <div class="btn-group">
                   <a href="/products/edit/<%=productos.id%>" class="btn btn-primary">Editar   <i ></i></a>
-   <form action="/products/delete/<%=productos.id%>?_method=DELETE" method="POST">
+   <form action="/products/delete/<%=productos.id%>?_method=DELETE" class="delete-button" method="POST">
    <button type="submit" class="btn btn-danger" >
     Borrar
     </button>
