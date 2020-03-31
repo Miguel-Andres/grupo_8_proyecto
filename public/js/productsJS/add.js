@@ -1,3 +1,4 @@
+/*
 window.addEventListener("load", function(){
 
   let form = document.querySelector("form.formulario");
@@ -12,9 +13,13 @@ window.addEventListener("load", function(){
           errores.push("el campo esta vacio");
       }else if ((campoCategoria.value != "") && (campoCategoria.value.length < 3 )) {
           errores.push("El campo debe tener mas de 3 caracteres")
-      }/*if (campoCategoria != String) {
+      }
+      
+      /*if (campoCategoria != String) {
         errores.push("Campo de texto")
       }*/
+
+      /*
 
       let campoNombre = document.querySelector("input.nombre");
 
@@ -22,33 +27,55 @@ window.addEventListener("load", function(){
           errores.push("el campo esta vacio");
       } if ((campoNombre.value != "") && (campoNombre.value.length < 3 )) {
           errores.push("El campo debe tener mas de 3 caracteres")
-      }/*if (campoNombre != String) {
+      }
+      
+      /*if (campoNombre != String) {
         errores.push("Campo de texto")
       }*/
+
+      /*
 
       let campoPrecio_individual = document.querySelector("input.precio_individual")
 
       if(campoPrecio_individual.value == "" ) {
         errores.push("el campo esta vacio")
-      } /*if (campoPrecio_individual != Number) {
+      } if ((campoPrecio_individual.value != "") && (campoPrecio_individual.value.length < 2 )) {
+        errores.push("El campo debe tener mas de 2 caracteres")
+      }
+      
+      /*if (campoPrecio_individual != Number) {
         errores.push("Campo numérico")
       }*/
+
+      /*
 
       let campoPrecio_mediana = document.querySelector("input.precio_mediana")
 
       if(campoPrecio_mediana.value == "" ) {
         errores.push("el campo esta vacio")
-      }/*if (campoPrecio_mediana != Number) {
+      } if ((campoPrecio_mediana.value != "") && (campoPrecio_mediana.value.length < 2 )) {
+        errores.push("El campo debe tener mas de 2 caracteres")
+      }
+      
+      /*if (campoPrecio_mediana != Number) {
         errores.push("Campo numérico")
       }*/
+
+      /*
 
       let campoPrecio_grande = document.querySelector("input.precio_grande")
 
       if(campoPrecio_grande.value == "" ) {
         errores.push("el campo esta vacio")
-      } /*if (campoPrecio_grande != Number) {
+      } if ((campoPrecio_grande.value != "") && (campoPrecio_grande.value.length < 2 )) {
+        errores.push("El campo debe tener mas de 2 caracteres")
+      } 
+      
+      /*if (campoPrecio_grande != Number) {
         errores.push("Campo numérico")
       }*/
+
+      /*
        
       let campoDetalle = document.querySelector("input.detalle");
 
@@ -56,9 +83,13 @@ window.addEventListener("load", function(){
         errores.push("el campo esta vacio");
     } if ((campoDetalle.value != "") && (campoDetalle.value.length < 3 )) {
         errores.push("El campo debe tener mas de 3 caracteres")
-    } /*if (campoDetalle != String) {
+    } 
+    
+    /*if (campoDetalle != String) {
         errores.push("Campo de texto")
       }*/
+
+      /*
 
       let campoProducto = document.querySelector("input.producto");
 
@@ -67,14 +98,18 @@ window.addEventListener("load", function(){
         errores.push("el campo esta vacio");
     } if ((campoProducto.value != "") && (campoProducto.value.length < 3 )) {
         errores.push("El campo debe tener mas de 3 caracteres")
-    }/*if (campoProducto != String) {
+    }
+    
+    /*if (campoProducto != String) {
         errores.push("Campo de texto")
       }*/
+
+      /*
       
       if(errores.length > 0) {
         e.preventDefault();
 
-        let = ulErrores = document.querySelector("div.errores ul")
+        let  ulErrores = document.querySelector("div.errores ul")
         for (let i = 0; i < errores.length; i++) {
           
             ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
@@ -85,4 +120,4 @@ window.addEventListener("load", function(){
    });
   })
 
-
+*/
