@@ -36,15 +36,25 @@ router.delete("/profile/delete",userController.delete)
 router.get('/logout', userController.logout)
 
 // get User List
-router.get("/list" , (req,res,next) => {
-   models.user.findAll({
-    include:[models.avatar]
+router.get("/lista" , function(req,res,next) {
+  models.token.findAll({
+    include :[ models.user],
   })
-  .then(resultado =>{
-    res.json(resultado)
-  }
-    )
-}
-)
+ .then(resultado => {
+   res.json(resultado)
+  
+   })
+})
+
+ // get token list
+
+ router.get("/listatoken" , function(req,res,next) {
+  models.user.findAll({
+    include:[models.token]
+  })
+ .then(resultado => {
+   res.json(resultado)
+   })
+})
 
  module.exports = router;

@@ -79,6 +79,14 @@ module.exports = function (sequelize ,dataTypes){
         })
     }
 
+    user.associate = function(models){
+
+        user.hasMany(models.token,{
+            
+            foreignKey:"cliente_id"
+        })
+    }
+
 
     return user
 

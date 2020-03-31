@@ -19,51 +19,41 @@ USE `baruk_db`;
 -- Volcando estructura para tabla baruk_db.avatars
 CREATE TABLE IF NOT EXISTS `avatars` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+  `nombre` varchar(45) DEFAULT NULL,
+  `cliente_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_avatars_cliente _idx` (`cliente_id`),
+  CONSTRAINT `fk_avatars_cliente ` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla baruk_db.avatars: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla baruk_db.avatars: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `avatars` DISABLE KEYS */;
+REPLACE INTO `avatars` (`id`, `nombre`, `cliente_id`) VALUES
+	(10, 'MiguelFoto', 45);
 /*!40000 ALTER TABLE `avatars` ENABLE KEYS */;
 
 -- Volcando estructura para tabla baruk_db.clientes
 CREATE TABLE IF NOT EXISTS `clientes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(200) DEFAULT NULL,
-  `apellido` varchar(200) DEFAULT NULL,
-  `email` varchar(200) DEFAULT NULL,
-  `password` varchar(200) DEFAULT NULL,
-  `pais` varchar(200) DEFAULT NULL,
-  `ciudad` varchar(200) DEFAULT NULL,
-  `direccion` varchar(200) DEFAULT NULL,
-  `avatar_id` varchar(200) DEFAULT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `apellido` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `pais` varchar(45) DEFAULT NULL,
+  `ciudad` varchar(45) DEFAULT NULL,
+  `direccion` varchar(45) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla baruk_db.clientes: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla baruk_db.clientes: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
 REPLACE INTO `clientes` (`id`, `nombre`, `apellido`, `email`, `password`, `pais`, `ciudad`, `direccion`, `created_at`, `updated_at`, `deleted_at`) VALUES
-	(19, 'tes1 ', 'test1', 'ramon@ramon.com', '$2b$04$NTidWm1OTYNbdv1AEwdwW.8GNkurVzzqZbE.md', NULL, NULL, NULL, '2020-03-02 01:27:04', '2020-03-02 01:27:04', NULL),
-	(20, 'tomas', 'tomas', 'tomas@tomas.com', '12345', NULL, NULL, NULL, '2020-03-02 06:13:09', '2020-03-02 06:13:09', NULL),
-	(21, 'test1', 'test1', 'test1@test1.com', '$2b$04$DUcezzDzPnowZ8DBHH0T3.Bc.qcyZFkJNtqx7s', NULL, NULL, NULL, '2020-03-02 20:49:56', '2020-03-02 20:49:56', NULL),
-	(22, 'prueba', 'prueba', 'prueba@prueba.com', '$2b$04$XtDrVDusMirL.eikcR8qxO9P4xGg33YtH1zGYC', NULL, NULL, NULL, '2020-03-03 02:32:41', '2020-03-03 02:32:41', NULL),
-	(23, 'prueba 45', 'prueba 45', 'prueba@ididjd.com', '$2b$04$P4gmYu9rDUmYciMT/Qmm2.scAhXEM./H/W8x7Z', NULL, NULL, NULL, '2020-03-03 06:33:48', '2020-03-03 06:33:48', NULL),
-	(24, 'test1', 'test1', 'test1@test1.com', '$2b$04$Ku3iq3DRJqmZK69skCFkuuHii8mtDM9JA5ipWE', NULL, NULL, NULL, '2020-03-03 06:27:32', '2020-03-03 06:27:32', NULL),
-	(25, 'test3', 'test3', 'tes3@hchchc.com', '$2b$04$wbQ8CcvuZxIr4RwaVx6KMuH3bsp.YOjy6XeaSX', NULL, NULL, NULL, '2020-03-03 06:28:22', '2020-03-03 06:28:22', NULL),
-	(26, 'test4 ', 'test4', 'test4@test4.com', '$2b$04$tb4Z7msiORXXkyU9ojAnreTywqiHIB5xvX2k1U', NULL, NULL, NULL, '2020-03-03 06:36:49', '2020-03-03 06:36:49', NULL),
-	(27, 'ale', 'test', 'a@a.com', '$2b$04$.DQ3S9DAhfHprlK9VIdBZOFelVe1cV9kqHXW4c', NULL, NULL, NULL, '2020-03-03 06:38:56', '2020-03-03 06:38:56', NULL),
-	(28, 'ale', 'ale', 'b@b.com', '$2b$04$oBH7QY82swP7i59PBTjLSeUXT21ZsgzpZbOvRQyXxpiicfLMO1l2.', NULL, NULL, NULL, '2020-03-03 06:45:19', '2020-03-03 06:45:19', NULL),
-	(29, 'miguel', 'miguel', 'prueba3@prueba3.com', '$2b$04$fSNKO8xLl5IOrSPRmCrQwe5NuwFhFN5f9TV5jhf1NxP2RwbpDPId2', NULL, NULL, NULL, '2020-03-03 06:57:52', '2020-03-03 06:57:52', NULL),
-	(30, 'miguel andres', 'silva pereira', 'miguel@miguel.com', '$2b$04$kppsruFo62cZolWZe973w.AeVwOISZvsFk.awV5WF7hPr6r8Z0EA2', NULL, NULL, NULL, '2020-03-05 04:17:14', '2020-03-05 04:17:14', NULL),
-	(31, 'pedro andres', 'silva', 'a@a.com', '$2b$04$pDXjXUBL5fr9OwcwKzrTMOOjYaaGonC22CZEf6QKmAwVd9L4QSrM2', NULL, NULL, NULL, '2020-03-05 11:30:54', '2020-03-05 11:30:54', NULL),
-	(32, 'hola soy el nuevo usuario', 'hola', 'xyz@xyz.com', '$2b$04$.dUsKmhHu8qQn288EstsRuUZguW3Vr8alLO.Uq4YEAFaWS3Ny98zK', NULL, NULL, NULL, '2020-03-05 11:31:53', '2020-03-05 11:31:53', NULL),
-	(33, 'lorenzo', 'mendoza  fff', 'lorenzo@mendoza.com', '$2b$04$7UbevI3PgArE2m5tE0Dwq.P4ZZL30PUFYEHUdvFrqwt3NtOqPNS.m', 'argentina', 'buenos aires', 'inglatteta', '2020-03-05 11:36:45', '2020-03-25 03:12:21', NULL),
-	(34, 'pedro perez', 'juan', 'pedro@pedro.com', '$2b$04$w/dDJ7s9j00VrfcbTaqJfOFStnmiUP96o9IiS6tV1e8GV7nl.lWBu', NULL, NULL, NULL, '2020-03-05 11:17:53', '2020-03-05 11:17:53', NULL),
-	(35, 'ale', 'ale', 'ale@gmail.com', '$2b$04$TywpTUJz33.H.aeO/WZnXul5jiyi.SUwfKHaVLSd3LScEV8dNc/Wi', 'barcelona', 'barcelona', 'barcelona', '2020-03-05 11:20:35', '2020-03-05 11:49:22', NULL),
-	(36, 'kdjdj', 'kskfj', 'kk@jjsks.com', '$2b$04$0F26pebEM3ue2Dq0TTUvjOjRMSua44t1pNCMNKxptPE4LN4Ojzc06', NULL, NULL, NULL, '2020-03-10 18:29:48', '2020-03-10 18:29:48', NULL);
+	(39, 'Prueba 1', 'prueba 1', 'a@a.com', '$2b$04$.3j54./oCeM8w9w2QosfOO.pkeAm.czErIDFR6EErgIjnva.u7XV2', NULL, NULL, NULL, '2020-03-26 20:04:40', '2020-03-26 20:04:40', NULL),
+	(40, 'prueba 2', 'prueba 2', 'b@b.com', '$2b$04$o03HXdvhDjIWNDQbWFKDleskmpW.xVpNl4Qf4aHbV29OoHrJZ2LTm', NULL, NULL, NULL, '2020-03-26 21:04:06', '2020-03-26 21:04:06', NULL),
+	(45, 'rodrigo', 'silva', 'lorenzo@mendoza.com', '$2b$04$hcw5FDcnL0vHsEGqEzYWHuLqBAw/0Ip3V6J3e4h0HZdUTfpkGb/ny', 'venezuela', 'barquisimeto', 'albariño', '2020-03-28 04:47:27', '2020-03-29 18:05:52', NULL);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 
 -- Volcando estructura para tabla baruk_db.productos
@@ -78,9 +68,9 @@ CREATE TABLE IF NOT EXISTS `productos` (
   `producto` varchar(200) NOT NULL,
   `imagen` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla baruk_db.productos: ~18 rows (aproximadamente)
+-- Volcando datos para la tabla baruk_db.productos: ~19 rows (aproximadamente)
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
 REPLACE INTO `productos` (`id`, `nombre`, `categoria`, `precio_individual`, `precio_mediana`, `precio_grande`, `detalle`, `producto`, `imagen`) VALUES
 	(1, 'Muzzarela', 'clasica', 281, 400, 500, 'Salsa de tomate, muzzarella y oregano', 'pizza', 'https://i.ibb.co/mHfn32y/muzzarella.jpg'),
@@ -95,9 +85,6 @@ REPLACE INTO `productos` (`id`, `nombre`, `categoria`, `precio_individual`, `pre
 	(10, 'champigñon', 'especial', 401, 500, 600, 'Salsa de tomate, muzzarella, champigñon y puerro', 'pizza', 'https://i.ibb.co/1nGv6Tg/champig-on.jpg'),
 	(11, 'espinaca y salsa blanca', 'especial', 402, 500, 600, 'Salsa de tomate, espinacha, salsa bechamel y muzzarella', 'pizza', 'https://i.ibb.co/HCn4x8N/P-espinaca.jpg'),
 	(12, 'cebolla caramelizada', 'especial', 403, 500, 600, 'Salsa de tomate, muzzarella, cebolla caramelizada y vino tinto', 'pizza', 'https://i.ibb.co/ZBYPRt2/cebollaC.jpg'),
-	(32, 'Miguel', 'piza ', 234, 234, 123, '', 'clasiscas', ''),
-	(33, 'pizita', 'clasiscas', 233, 23334, 123444, 'la mejor pizza de todas', 'original', ''),
-	(34, 'jamon ', 'pizza', 100, 150, 300, 'Prueba vistas', 'pixxa', ''),
 	(38, 'Palmitos', 'clasica ', 0, 0, 600, 'salsa de tomate, muzzarella, palmitos y jamon cocido', 'pizza', 'https://i.ibb.co/3z0KDFg/palmitos-Fi.jpg'),
 	(39, 'Anchoas', 'clasica ', 350, 450, 600, 'salsa de tomate y anchoas', 'pizza', 'https://i.ibb.co/6Y2p114/anchoas.jpg'),
 	(40, 'Higos, Jamon Crudo y Brie', 'especial', 350, 450, 600, 'salsa de tomate, muzzarella, jamon crudo, higos y queso brie', 'pizza', 'https://i.ibb.co/WfSry4x/higos-crudo-brie.jpg'),
@@ -106,16 +93,21 @@ REPLACE INTO `productos` (`id`, `nombre`, `categoria`, `precio_individual`, `pre
 	(65, 'Coliflor', 'especial', 300, 400, 600, 'Salsa de tomate, muzzarella y coliflor', 'pizza', '');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 
--- Volcando estructura para tabla baruk_db.token
-CREATE TABLE IF NOT EXISTS `token` (
-  `id` int(11) NOT NULL,
-  `id_cliente` int(11) DEFAULT NULL,
-  `token` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='token para cookies';
+-- Volcando estructura para tabla baruk_db.tokens
+CREATE TABLE IF NOT EXISTS `tokens` (
+  `id` int(200) NOT NULL AUTO_INCREMENT,
+  `cliente_id` int(200) NOT NULL,
+  `token` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_tokens_clientes` (`cliente_id`),
+  CONSTRAINT `fk_tokens_clientes` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='token para cookies';
 
--- Volcando datos para la tabla baruk_db.token: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `token` DISABLE KEYS */;
-/*!40000 ALTER TABLE `token` ENABLE KEYS */;
+-- Volcando datos para la tabla baruk_db.tokens: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `tokens` DISABLE KEYS */;
+REPLACE INTO `tokens` (`id`, `cliente_id`, `token`) VALUES
+	(1, 45, '2003-06-01');
+/*!40000 ALTER TABLE `tokens` ENABLE KEYS */;
 
 -- Volcando estructura para tabla baruk_db.ventas
 CREATE TABLE IF NOT EXISTS `ventas` (
