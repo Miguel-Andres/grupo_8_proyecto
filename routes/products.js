@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var productController = require("../controllers/productController.js")
-const multerAvatar = require ("../middlewares/multerAvatar")
+const multerProducto = require ("../middlewares/multerProducto")
 var { check, validationResult, body } = require('express-validator')
 const productsValidator = require ("../middlewares/productsValidator")
 
@@ -16,7 +16,7 @@ router.get('/', productController.products);
 router.get('/create', productController.create);
 
 /* Post add product page. */
-router.post('/create', multerAvatar, productsValidator, productController.addProduct);
+router.post('/create', multerProducto, productsValidator, productController.addProduct);
 
 /* GET  product id page. */
 router.get('/:id', productController.productId);
