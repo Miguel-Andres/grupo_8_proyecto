@@ -1,4 +1,4 @@
 window.addEventListener("load", function(){
-alert("pachu");
+alert("js del detalle ");
 
 })
