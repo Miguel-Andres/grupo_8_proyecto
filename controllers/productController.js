@@ -87,7 +87,7 @@ const productController ={
       detalle: req.body.detalle,
       producto: req.body.producto,
       categoria:req.body.categoria, 
-      imagen : req.files[0].filename ,
+      imagen : req.files[0].filename,
 
     },  {
       where:{
