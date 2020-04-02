@@ -136,15 +136,15 @@ window.addEventListener("load", function(){
           }
 
            if( oneInput.name == "avatar"){
-               oneInput.addEventListener("change",function(){
+               oneInput.addEventListener("change",function() {
                 let fileExtension = this.value.split(".").pop();
-                let accepteExtensions = ["jpg", "jpeg", "png", "webm", "svg"];
-                 if (!accepteExtensions.includes(fileExtension)) {
+                let acceptedExtensions = ["jpg", "jpeg", "png", "webm", "svg"];
+                 if (!acceptedExtensions.includes(fileExtension)) {
  
                  this.classList.add("is-invalid");
                  this.classList.remove("is-valid");
 
-                this.nextElementSibling.innerHTML = `Formato invalido, los formatos pueden ser: ${accepteExtensions}`;
+                this.nextElementSibling.innerHTML = `Formato invalido, los formatos pueden ser: ${acceptedExtensions}`;
                 inputErrors[this.name] = true
 
                } else {
