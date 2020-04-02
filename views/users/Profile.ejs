@@ -20,10 +20,10 @@
         <div class="row my-2">
 
             <div class="col-lg-4 order-lg-1 text-center">
-                <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                <img  src="../avatar/<%= user.imagen %>" class="mx-auto img-fluid img-circle d-block" alt="aqui va la foto del usuario">
                 <h6 class="mt-2 ">Upload a different photo</h6>
-                <form action="" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="avatar" class="form-control-file">
+                <form action="/users/profile/avatar" method="POST" enctype="multipart/form-data">
+                    <input type="file" name= "avatar" class="form-control-file">
                     <button type="submit">subir</button>
 
                 </form>
@@ -65,6 +65,7 @@
 
                                 <h6>email</h6>
                                 <p><%= user.email%></p>
+                                
 
 
                                 <a class="col-3 btn btn-danger float-right" href="/users/profile/edit">Editar</a>

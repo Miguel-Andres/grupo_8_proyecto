@@ -8,13 +8,17 @@ const multer = require("multer")
           cb(null, 'public/avatar')
         },
         filename: function (req, file, cb) {
-          cb(null, file.fieldname + '-' + Date.now()+ path.extname(file.originalname))
+
+          nombreAvatar = req.session.user.nombre + '-' + Date.now()+ path.extname(file.originalname) 
+          cb(null, nombreAvatar)
+
+          
         }
         }) 
         
         
         
          
-        var upload = multer({ storage: storage })
+  var multerAvatar = multer({ storage: storage })
 
-module.exports = upload.any()
+module.exports = multerAvatar.any() 

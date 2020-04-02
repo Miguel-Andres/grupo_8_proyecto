@@ -99,12 +99,28 @@ const userController = {
 
 
     profile : function (req,res){
-        /*console.log('sesion', req.session)*/
+        console.log('sesion', req.session)
 
-        res.render( "users/profile", {
+            res.render( "users/profile", {
             user: req.session.user
         } )
     } ,
+
+    profileAvatar : function (req,res){
+        console.log('sesion', req.session)
+
+        db.user.update({
+
+            imagen: req.files[0].filename,
+            
+        },{
+            where:{
+              id: req.session.user.id,
+            }
+        })
+
+      return res.redirect("/users/profile")
+    },
 
     profileEdit : (req,res)=>{
 
@@ -179,6 +195,17 @@ const userController = {
             res.redirect("/")
 
         },
+
+       /* avatar : (req,res,next) =>{
+
+            db.avatar.create({
+                cliente_id : req.session.user.id ,
+                
+            })
+            res.render( "users/profile", {
+                user: req.session.user
+            } )
+        },*/
     
         
 

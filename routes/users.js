@@ -17,13 +17,14 @@ let validatorEdit = require("../middlewares/validatorEdit")
 /* GET && POST users listing. */
 router.get('/profile', userRouter, userController.profile  )
 
-router.post("/profile", multerAvatar , userController.profile )
+router.post("/profile/avatar", multerAvatar , userController.profileAvatar )
 
 //user profile edit get and post
 
 router.get("/profile/edit" ,userController.profileEdit ) 
 
 router.post("/profile/editdata",validatorEdit, userController.edit)
+
 
 
 
