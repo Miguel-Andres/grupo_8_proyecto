@@ -5,7 +5,7 @@
       
 
       <ul>Menu
-        <li><a href="/products">Pizzas</a></li>
+        <li><a href="/products"  style="color:  rgb(157, 23, 37);">Pizzas</a></li>
       </ul>
       <ul>Eventos
         <li><a>Próximos</a></li>
@@ -27,9 +27,9 @@
 
       <ul> Mi cuenta
 
-        <li><a href="/">Ingresa</a></li>
-        <li><a  href="/register">Creá tu cuenta</a></li>
-         <li "><a>Mi cuenta</a></li>
+        <% if (!isAuthenticated) { %> <li><a href="/" style="color:  rgb(157, 23, 37);">Ingresa</a></li>
+        <li><a  href="/register" style="color:  rgb(157, 23, 37);">Creá tu cuenta</a></li> <% }  else { %>
+         <li ><a href="/users/profile" style="color:  rgb(157, 23, 37);">Mi cuenta</a></li> <% } %>
       </ul>
 
 

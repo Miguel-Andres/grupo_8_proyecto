@@ -10,8 +10,8 @@
     <header>
       <%- include("../partials/header") %>
     </header>
-
-    <div class="card mb-3 card-margin"  style="max-width: 725px;">
+    <div class="orden-carro"> 
+    <!--<div class="card mb-3 card-margin container compra"   style="max-width: 725px;">
       <div class="row no-gutters">
         <div class="col-md-4">
           <img src="<%=productos.imagen%>"class="card-img" alt="imagen_pizza">
@@ -19,23 +19,41 @@
         <div class="col-md-8">
           <div class="card-body">
             <h1 class="card-title"><%=productos.nombre%></h1>
-            <h2 class="card-text"><small><%=productos.detalle%>.</small></h2>
+            
             <h3 class="card-text">$<%=productos.precio_grande%></h3>
           </div>
         </div>
       </div>
+    </div> --> 
+
+    <div class="card mb-3 " style="width: 18rem;">
+      <img src="<%=productos.imagen%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h1 class="card-title"><%=productos.nombre%></h1>
+        <p class="card-text"><%=productos.detalle%>..</p>
+        <h3 class="card-text">$<%=productos.precio_grande%></h3>
+      </div>
     </div>
   
-    
-<!-- Items-->
-    <section class="container ">
-      <div class="row">
-        <section class="col-8 "> 
-
-        </section>
+   
+    <div class="card mb-3" style="width: 18rem;">
+      <div class="card-body ">
+        <h5 class="card-title ">factura de pedido</h5>
+        <h6 class="card-subtitle mb-2 text-muted">envio</h6>
+        <p class="card-text">$gratis</p>
+        <a  class="card-title">precio producto</a>
+        <p class="card-text">$<%=productos.precio_grande%></p>
+        <a class="card-title">total</a>
+        <p>$<%=productos.precio_grande%></p>
+        <form  method="POST">
+          <button type="button" class="btn btn-dark">Comprar</button>
+        </form> 
 
       </div>
-    </section>
+    </div>
+  </div>
+<!-- Items-->
+    
       
   
       
