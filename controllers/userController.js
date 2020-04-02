@@ -124,7 +124,7 @@ const userController = {
 
     profileEdit : (req,res)=>{
 
-        res.render("users/Edit")
+        res.render("users/edit.ejs")
     },
 
     edit:(req,res)=>{
@@ -190,9 +190,9 @@ const userController = {
             db.user.destroy({
                where :{
                    id : req.session.user.id
-               }
-            })
-            res.redirect("/")
+               },
+            }).then(res.redirect("/"))
+            
 
         },
 

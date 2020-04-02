@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
    <%- include("../partials/head") %>
+    
+   
 </head>
 <body>
     <header class="header-profile">
@@ -31,25 +33,28 @@
             <div class="card-body">
                 <!--Formulario-->
                 <div class=" container col-8 "  id="edit" >
-                    <form role="form " method="POST" action="/users/profile/editdata">
+                    <form role="form " method="POST" action="/users/profile/editdata" id="editForm" >
                         <h4  class="Titulo-edit"> Datos de contacto</h4>
                         <div class="form-group row ">
                             
                             <label class="col-lg-3 col-form-label form-control-label">First name</label>
                             <div class="col-lg-9">
                                 <input class="form-control" type="text" value="<%= user.nombre%>" name="name">
+                                <p class="invalid-feedback"></p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Last name</label>
                             <div class="col-lg-9">
                                 <input class="form-control" type="text" value="<%=user.apellido%>" name="lastName">
+                                <p class="invalid-feedback"></p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Email</label>
                             <div class="col-lg-9">
                                 <input class="form-control" type="email" value="<%= user.email%>" disabled="disabled">
+                                
                             </div>
                         </div>                                                   
                         
@@ -58,6 +63,7 @@
                             
                             <div class="col-lg-6">
                                 <input class="form-control" type="text" value="<%= user.direccion%>" placeholder="direccion" name="direccion">
+                                <p class="invalid-feedback"></p>
                                 <% if (typeof errors != "undefined") { %>
                                     <ul>
     
@@ -74,10 +80,12 @@
                             <label class="col-lg-3 col-form-label form-control-label">Pais</label>
                             <div class="col-lg-3">
                                 <input class="form-control" type="text" value="<%= user.pais%>" placeholder="pais" name="pais">
+                                <p class="invalid-feedback"></p>
                             </div>
                             <label class="col-lg-2 col-form-label form-control-label">ciudad</label>
                             <div class="col-lg-3">
                                 <input class="form-control" type="text"  value="<%= user.ciudad%>" placeholder="ciudad" name="ciudad">
+                                <p class="invalid-feedback"></p>
                             </div>
                         </div>
                         
@@ -118,12 +126,13 @@
                 <!--Formulario-->
 
                 <div class="col-6  container" id="reset-pass">
-                    <form  role="form " action="/users/profile/editpass?_method=PUT" method="POST"> 
+                    <form  role="form " action="/users/profile/editpass?_method=PUT" method="POST" id="editPass"> 
                         <h4 class="Titulo-edit"> Cambio de Contraseña</h4>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Password</label>
                             <div class="col-lg-6">
                                 <input class="form-control" type="password" placeholder="Ingrese password" name="password">
+                                <p class="invalid-feedback"></p>
                                 <% if (typeof errors != "undefined") { %>
                                     <ul>
                                         <% for(let i = 0 ; i<errors.length ; i++) { %> 
@@ -133,15 +142,14 @@
                                    <% } %>  
                             </div>
                             
-                           
-                                      
-                               
-                               
+                                                                
+                                                              
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Confirme password</label>
                             <div class="col-lg-6">
                                 <input class="form-control" type="password" placeholder="confirme password"  name="confirmpassword">
+                                <p class="invalid-feedback"></p>
                             </div>
                         </div>
 
@@ -176,13 +184,13 @@
             <div class="card-body">
                 <!--delete form-->
                 
-                <form class="delete" method="POST" action="/users/profile/delete?_method=DELETE" role="form">
+                <form class="delete" method="POST" action="/users/profile/delete?_method=DELETE" role="form" id="delete">
                     <div class="alert alert-danger" role="alert">
                         ¡Estas Seguro de eliminar tu cuenta !
                         
                     </div>
                     <a href="users/profile" style="font-weight: bold; color: black; text-decoration: none;"> Back</a>
-                    <input type="submit" class="col-xs- btn btn-danger float-right" value="delete">
+                    <input type="submit" class="col-xs- btn btn-danger float-right" value="delete" id="deletebutton">
                 </form>
                 <!-- fin delete form-->
 
@@ -201,8 +209,12 @@
 
 
     <!--footer-->
-        <%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>
     
-  
-</body>
+      
+
+    
+    <script  type = "text/javascript"  src = "/js/validator.min.js" > </script>
+<script src="/js/user/edit.js"> </script>
+</body>    
 </html>
