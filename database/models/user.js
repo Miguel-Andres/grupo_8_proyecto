@@ -55,6 +55,13 @@ module.exports = function (sequelize ,dataTypes){
             allowNull : true ,
 
         },
+        imagen:{
+            type : dataTypes.STRING ,
+            allowNull : true ,
+
+            
+
+        }
 
 
 

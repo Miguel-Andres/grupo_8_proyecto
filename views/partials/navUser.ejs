@@ -16,11 +16,11 @@
       
     </ul>
     
-    <li class="li-profile">
-      <%= user.nombre %>
+    <li class="li-profile" style="font-weight: bold;" >
+     <a href="/users/profile" style="color: black;"><%= user.nombre %></a>
    </li>
     <li class="li-profile">
-      <a ><img class ="avatar-profile" src="../public/avatar/Homero.png" width="45" ></a>
+      <a ><img class ="avatar-profile"  href="/users/profile" src="../avatar/<%= user.imagen %>" width="45" ></a>
    </li>
    
     <li  class="li-profile">

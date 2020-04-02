@@ -5,12 +5,12 @@ const multer = require("multer")
 
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
-          cb(null, 'public/avatar')
+          cb(null, 'public/pizzas')
         },
         filename: function (req, file, cb) {
 
-          nombreAvatar = req.session.user.nombre + '-' + Date.now()+ path.extname(file.originalname) 
-          cb(null, nombreAvatar)
+          nombreProducto = req.body.nombre + '-' + Date.now()+ path.extname(file.originalname) 
+          cb(null, nombreProducto)
 
           
         }
