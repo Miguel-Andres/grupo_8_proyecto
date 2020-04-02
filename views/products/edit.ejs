@@ -13,7 +13,7 @@
 <section class="  container ap ">
 
     <div class="container row wrap rt col-6">
-          <form class="formulario container-fluid" action="/products/edit/<%=productos.id%>?_method=PUT" method="POST" >
+          <form class="formulario container-fluid" action="/products/edit/<%=productos.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
             <% if (typeof errors != "undefined")  { %>
               <p style="color:red"></p>
               <ul>
@@ -66,7 +66,7 @@
                     </div>
                   </div>
                   <label >Imagen</label>
-                  <input type="file" name="avatar" class="form-control-file" ><br>
+                  <input type="file" name="imagenProducto" class="form-control-file" ><br>
                   <button type="submit" class="btn btn-danger">Editar</button>
                 </form>
               </div>

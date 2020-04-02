@@ -23,7 +23,7 @@ router.get('/:id', productController.productId);
 
 /* Actualizaicon */
 router.get('/edit/:id', productController.edit);
-router.put('/edit/:id', productsValidator, productController.update);
+router.put('/edit/:id', multerProducto ,productsValidator, productController.update);
 
 /* Borrar */
 router.delete('/delete/:id', productController.delete);
