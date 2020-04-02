@@ -2,8 +2,11 @@
 <html lang="en">
 <head>  
   <%- include("../partials/head") %>
-</head>
-<body>
+  <script  type = "text/javascript"  src = "../js/validator.min.js" > </script>
+  <script src="../js/productsJS/editFront.js"></script>
+</header>
+ </head>
+ <body>
 
   <header>
     <%- include("../partials/header") %>
@@ -11,7 +14,15 @@
 
 <!--Inicio secction-->
 <section class="  container ap ">
+   <div>
+    <% if (typeof errors != "undefined")  { %>
+    <% for (let i = 0; i < errors.length; i++) { %>
+    <p style="color: red;" > <%= errors[i].msg %></p>
+    <% } %>
+    <% } %>
+    </div>
 
+<<<<<<< HEAD
     <div class="container row wrap rt col-6">
           <form class="formulario container-fluid" action="/products/edit/<%=productos.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
             <% if (typeof errors != "undefined")  { %>
@@ -73,14 +84,62 @@
                 
                 
     
+=======
+
+ <div class="container row wrap rt col-6">
+ <form class="formulario container-fluid" id ="formE" action="/products/edit/<%=productos.id%>?_method=PUT" method="POST" >
+ <div class="form-row">
+  <div class="form-group col-md-6">
+  <label >Categoria  </label>
+  <input type="text" name="categoria" class="form-control categoria" value="<%=productos.categoria%>">
+  <p class="invalid-feedback"></p>
+  </div>
+  <div class="form-group col-md-6">
+  <label > Nombre</label>
+  <input type="text" name="nombre" class="form-control nombre" value="<%=productos.nombre%>">
+  <p class="invalid-feedback"></p>
+  </div>
+  </div>      
+  <div  class="form-row ">
+  <div class="form-group col-md-3">
+  <label >Precio Individual</label>
+  <input type="text" name="precio_individual" class="form-control precio_individual" value="<%=productos.precio_individual%>" >
+  <p class="invalid-feedback"></p>
+  </div>
+  <div class="form-group col-md-3">
+  <label > Precio Mediana</label>
+  <input type="text" name="precio_mediana" class="form-control precio_mediana" value="<%=productos.precio_mediana%>" >
+  <p class="invalid-feedback"></p>
+  </div>
+  <div class="form-group col-md-3">
+  <label >Precio Grande</label>
+  <input type="text" name="precio_grande" class="form-control precio_grande" value="<%=productos.precio_grande%>" >
+  <p class="invalid-feedback"></p>
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="inputAddress">Detalle</label>
+  <input type="text" class="form-control detalle" name="detalle" placeholder="" value="<%=productos.detalle%>">
+  <p class="invalid-feedback"></p>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-6">
+  <label for="inputCity">Producto</label>
+  <input type="text" class="form-control producto"  name="producto" id="inputCity" value="<%=productos.producto%>">
+  <p class="invalid-feedback"></p>
+  </div>
+  </div>
+  <label >Imagen</label>
+  <input type="file" name="avatar" class="form-control-file" >
+  <p class="invalid-feedback"></p><br>
+  <button type="submit" class="btn btn-danger">Editar</button>
+  </form>
+  </div>
+>>>>>>> 2169beaff51c304a2e0d432105be6772f3c5e7dd
   </section>
 
-  
-    
- 
+
  <!--footer-->
   <%- include("../partials/footer") %>
 
-
- 
-</html>
+  </html>
