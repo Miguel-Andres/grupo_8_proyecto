@@ -10,6 +10,12 @@
 }
 .informacion{
     margin: 50px;
+     justify-content: center;
+    display: flex;
+   
+}
+.pppp{
+    justify-content: center;
 }
 
 /* inicio nav bar user profile*/

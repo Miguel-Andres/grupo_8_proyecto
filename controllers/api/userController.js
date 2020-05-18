@@ -4,7 +4,7 @@ const db = require("../../database/models")
 
 let userController = {
 
-list : function(req,res) {
+list : function(req,res){
 
     db.user.findAll({
         include:[models.token]

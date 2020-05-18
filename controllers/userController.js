@@ -124,7 +124,9 @@ const userController = {
 
     profileEdit : (req,res)=>{
 
-        res.render("users/edit.ejs")
+        res.render("users/edit.ejs" ,{
+            user: req.session.user
+        })
     },
 
     edit:(req,res)=>{
@@ -136,6 +138,7 @@ const userController = {
         if(errorsEdit.isEmpty()){
 
             db.user.update({
+
                 nombre: req.body.name,
                 apellido :req.body.lastName,
                 pais : req.body.pais ,
@@ -152,7 +155,7 @@ const userController = {
              return res.redirect("/users/profile")
 
         }{
-            return res.render("users/edit" , {errors: errorsEdit.errors})
+            return res.render("users/edit" , {errors: errorsEdit.errors ,  user: req.session.user})
         }
 
         
@@ -186,15 +189,22 @@ const userController = {
         },
 
         delete: (req,res,next)=>{
-            
+
             db.user.destroy({
-               where :{
-                   id : req.session.user.id
-               },
-            }).then(res.redirect("/"))
+                where : {id : req.session.user.id} ,
+
+                
+
+            })
+            .then(()=> res.redirect("/"))
+            .catch(e => console.log(e))
+
+        
             
 
         },
+
+      
 
        /* avatar : (req,res,next) =>{
 

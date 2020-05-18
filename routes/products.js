@@ -16,7 +16,7 @@ router.get('/', productController.products);
 router.get('/create', productController.create);
 
 /* Post add product page. */
-router.post('/create', multerProducto, productsValidator, productController.addProduct);
+router.post('/create',  multerProducto, productsValidator, productController.addProduct);
 
 /* GET  product id page. */
 router.get('/:id', productController.productId);

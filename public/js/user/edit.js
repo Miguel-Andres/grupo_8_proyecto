@@ -3,11 +3,11 @@ let form = document.querySelector("#editForm")
 
 // capturamos elementos y convertimos en array
 let formElements = Array.from(form.elements)
-console.log(formElements)
+
 
 // sacamos el ultimo elemento que es el botton
 formElements.pop()
-console.log(formElements)
+
 
 // recorremos el array de elementos
 
@@ -43,7 +43,7 @@ let form2 = document.querySelector("#editPass")
 
 // capturamos elementos y convertimos en array
 let formElement = Array.from(form2.elements)
-console.log(formElements)
+
 
 // sacamos el ultimo elemento que es el botton
 formElement.pop()
@@ -77,17 +77,69 @@ formElement.forEach(function result(result){
 }) 
 
 //-----------------------DELETE---------------------//
-
-let delet = document.querySelector("#deletebutton")
-
-delet.addEventListener("click", function(){
-    confirm("Escribe eliminar ")
-
-    if(confirm){
-        window.location= "/"
-    }
+     
 
 
-})
+ let formdelete = document.querySelector("#delete")
+ 
+
+ 
+
+ formdelete.addEventListener("click", function(e){
+   
+
+         Swal.fire({
+        
+
+            reverseButtons : true ,
+            icon: "warning" ,
+            showCloseButton : true,
+            title :"ELIMINAR",
+            html :`Estas Seguro que quieres eliminar Tu Cuenta ` ,
+            showCancelButton : true ,
+            confirmButtonText :true ,
+            confirmButtonText : "Eliminar Cuenta" ,
+            cancelButtonText : "Regresar " ,
+            confirmButtonColor : "red" ,
+            cancelButtonColor : "#34566B" ,
+            
+                }).then( (result) => {
+                    console.log(result.value)
+
+                    if(result.value == true){
+
+                        console.log("me vas a borrar")
+                        formdelete.submit()
+                        
+                        
+
+                    } else {
+                         console.log("no me vas a borrar")
+                         e.preventDefault()
+                        
+                    }
+                   
+                   
+                }) 
+
+ })
+           
+
+
+
+
+     
+ 
+
+
+
+
+   
+    
+ 
+   
+
+
+
 
 

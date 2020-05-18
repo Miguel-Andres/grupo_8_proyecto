@@ -4,16 +4,25 @@ var userApiController = require("../../controllers/api/userController")
 var db = require("../../database/models")
 
 
-router.get("/" , function(req,res,) {
+router.get("/" , function(req,res) {
 
-    db.user.findAll({
+   /* db.user.findAll({
         include:[models.token]
       })
-     .then(function (resultado) {
+     .then(function(resultado) {
 
-        let prueba = resultado
-       res.send(prueba)
-       })
+        let prueba = {
+            meta : {
+                status:200,
+                
+                url: "/api/users"
+            },
+            data: resultado
+
+
+        },
+       res.send(prueba) */
+       
    
 })
     

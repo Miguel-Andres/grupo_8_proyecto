@@ -31,7 +31,8 @@ module.exports = function (sequelize,dataTypes){
 
         token.belongsTo(models.user,{
             
-            foreignKey:"cliente_id"
+            foreignKey:"cliente_id" ,
+            as : "user"
         })
     }
 

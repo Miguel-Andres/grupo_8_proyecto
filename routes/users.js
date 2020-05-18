@@ -39,20 +39,29 @@ router.get('/logout', userController.logout)
 // get User List
 router.get("/lista" , function(req,res,next) {
   models.token.findAll({
-    include :[ models.user],
+     
+    where :{
+      cliente_id :47
+    }
+
+              
+    
   })
  .then(resultado => {
    res.json(resultado)
   
+   }).catch(e => {
+     console.log(e)
    })
 })
 
  // get token list
 
  router.get("/listatoken" , function(req,res,next) {
-  models.user.findAll({
-    include:[models.token]
-  })
+  models.user.findByPk(
+   51,
+   {include :["tokens"] } 
+   )
  .then(resultado => {
    res.json(resultado)
    })

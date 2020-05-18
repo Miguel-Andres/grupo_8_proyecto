@@ -84,7 +84,8 @@ module.exports = function (sequelize ,dataTypes){
 
         user.hasMany(models.token,{
             
-            foreignKey:"cliente_id"
+            foreignKey:"cliente_id" ,
+            as :"tokens"
         })
     }
 
