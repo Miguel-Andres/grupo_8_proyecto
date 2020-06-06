@@ -1,9 +1,12 @@
 ###### Proyecto-Integrador
-• Integrantes: o Pablo Angelone o Tomas Peldslatier o Miguel Silva
+• Integrantes: 
+o Pablo Angelone 
+o Tomas Peldslatier
+o Miguel Silva
 
 • Acceso al repositorio Git Hub https://github.com/Miguel-Andres/grupo_8_proyecto.git
 
- • Acceso al TABLERO DE TRABAJO https://app.asana.com/0/1157756494752921/board
+ • Acceso al TABLERO DE TRABAJO https://app.asana.com/
 
 • La temática del proyecto esta apuntada a la comercialización de productos gastronómico, con fuerte foco en la personalización de los mismos y apuntado a publico joven y fuertemente vinculado con la tecnología.
 
