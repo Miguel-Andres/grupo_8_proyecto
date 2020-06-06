@@ -6,7 +6,7 @@ o Miguel Silva
 
 • Acceso al repositorio Git Hub https://github.com/Miguel-Andres/grupo_8_proyecto.git
 
- • Acceso al TABLERO DE TRABAJO https://app.asana.com/
+ • Acceso al TABLERO DE TRABAJO https://app.asana.com
 
 • La temática del proyecto esta apuntada a la comercialización de productos gastronómico, con fuerte foco en la personalización de los mismos y apuntado a publico joven y fuertemente vinculado con la tecnología.
 
