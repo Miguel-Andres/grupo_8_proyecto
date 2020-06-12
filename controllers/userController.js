@@ -51,7 +51,7 @@ const userController = {
         db.user.findOne({
             where : {email:req.body.email}
         })
-        .then(function(user){
+        .then(user => {
             
             if(user){
                 if( bcrypt.compareSync(req.body.password, user.password)){
