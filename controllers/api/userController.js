@@ -4,16 +4,35 @@ const db = require("../../database/models")
 
 let userController = {
 
-list : function(req,res){
+list : (req,res,next) => {
+  db.user.findAll()
+  .then(value => {
 
-    db.user.findAll({
-        include:[models.token]
-      })
-     .then(resultado => {
-       let respuesta = resultado
-       res.send(respuesta)
-       })
+      let user = {
+          meta :{
+              status : 200 ,
+              statusText :  " Ok aqui tienes los  productos de Baruk" ,
+              url : "api/users" ,
+              total : value.length ,
+          },
+          datos : value
+      }
+          res.json(user)
+  })
+
 },
+
+
+  create : (req,res) => {
+          db.user.create({
+
+            nombre: req.body.name,
+            apellido :req.body.lastName,
+            email : req.body.email,
+            password : bcrypt.hashSync(req.body.password,2) ,
+            
+            })
+  }
 
 
 

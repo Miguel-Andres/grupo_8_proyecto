@@ -3,13 +3,13 @@ import React , {Component} from "react"
 
 
 
-class Dash extends Component {
+class DashUser extends Component {
 
     constructor(props){
         super(props);
         this.state ={
             total :"" ,
-            producto : [] ,
+            usuarios : [] ,
             icon : "fas fa-clipboard-list fa-2x text-gray-300"
         }
     }
@@ -21,11 +21,11 @@ class Dash extends Component {
         }
         componentDidMount(){
             console.log("me actualize")
-            this.apiCall("http://localhost:3001/api/products",this.mostrarProducts)
+            this.apiCall("http://localhost:3001/api/users",this.mostrarUsers)
     
         }
         
-        mostrarProducts = data => {
+        mostrarUsers = data => {
 
             this.setState({
                 total : data.meta.total,
@@ -49,7 +49,7 @@ class Dash extends Component {
         let total ;
 
         if(this.state.total ===""){
-            total = <p>Cargando el total de productos</p>
+            total = <p>Cargando el total de Usuarios</p>
         }else{
             total = <p>
                 {this.state.total}
@@ -59,12 +59,12 @@ class Dash extends Component {
         return(
             
         <div className="col-md-4 mb-4">
-        <div className= "card border-left-warning shadow h-100 py-2" >
+        <div className= "card border-left-danger shadow h-100 py-2" >
             <div className="card-body">
                 <div className="row no-gutters align-items-center">
                     <div className="col mr-2">
                         <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Productos de la base de datos
+                            Usuarios En la base De Datos
                         </div>
                         <div className="h5 mb-0 font-weight-bold text-gray-800">
 
@@ -92,4 +92,4 @@ class Dash extends Component {
 
    
  
-export default Dash ;
+export default DashUser ;

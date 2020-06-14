@@ -10,6 +10,7 @@ import Menu from "./components/Menu"
 import Dash from "./components/Dash.js"
 import NavBar from './components/NavBar.js';
 import DbOption from './components/DbOption.js';
+import DashUser from './components/dashUsuer.js';
 
 
 
@@ -46,6 +47,7 @@ function App() {
           <div className="row">
 
             <Dash/>
+            <DashUser/>
                 
             
             
