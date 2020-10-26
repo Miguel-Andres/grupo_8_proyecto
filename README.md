@@ -1,6 +1,6 @@
 ###### Proyecto-Integrador
 • Integrantes: 
-o Pablo Angelone 
+ 
 o Tomas Peldslatier
 o Miguel Silva
 
